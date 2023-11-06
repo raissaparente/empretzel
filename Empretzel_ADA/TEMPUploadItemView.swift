@@ -17,6 +17,7 @@ struct UploadItemView: View {
         Form {
             TextField("Nome", text: $item.name)
             TextField("Descrição", text: $item.details)
+            
         }
         .navigationTitle("Publique um item")
         .navigationBarTitleDisplayMode(.inline)
