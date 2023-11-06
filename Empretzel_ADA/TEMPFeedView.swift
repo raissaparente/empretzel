@@ -5,8 +5,6 @@
 //  Created by Raissa Parente on 05/11/23.
 //
 
-import Foundation
-
 import SwiftUI
 import SwiftData
 
@@ -21,8 +19,12 @@ struct TempFeedView: View {
                 ForEach(items) { item in
                     NavigationLink(value: item) {
                         VStack {
+                            item.category.icon
+                                .resizable()
+                                .frame(width: 50, height: 50)
                             Text(item.name)
                             Text(item.details)
+                            Text(item.category.name)
                         }
                         .foregroundColor(item.category.color)
                     }
