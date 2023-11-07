@@ -5,17 +5,13 @@
 //  Created by Raissa Parente on 05/11/23.
 //
 
-
-import Foundation
 import SwiftData
 import SwiftUI
 
 @Model
 class Item {
     var name: String
-    
     var category: Category
-    
     var details: String
     var state: Int
 //    var lender: User
@@ -26,7 +22,6 @@ class Item {
         self.category = category
         self.details = details
         self.state = state
-    
     }
 }
 

@@ -9,8 +9,6 @@
 			<dict>
 				<key>anchoring</key>
 				<string>word</string>
-				<key>include-symbol-references</key>
-				<integer>0</integer>
 				<key>match-case</key>
 				<integer>1</integer>
 				<key>query</key>
@@ -35,8 +33,6 @@
 				<string>word</string>
 				<key>include-symbol-members</key>
 				<integer>1</integer>
-				<key>include-symbol-references</key>
-				<integer>0</integer>
 				<key>match-case</key>
 				<integer>1</integer>
 				<key>query</key>

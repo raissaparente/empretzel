@@ -19,17 +19,17 @@ enum Category: String, Codable {
     var color: Color {
        switch self {
        case .clothes:
-           return .blue
+           return .clothesorange
        case .books:
-           return .green
+           return .bookpurple
        case .tools:
-           return .red
+           return .toolgreen
        case .tech:
-           return .purple
+           return .techblue
        case .entertainment:
-           return .orange
+           return .entertainmentred
        case .other:
-           return .gray
+           return .othergray
        }
    }
     
