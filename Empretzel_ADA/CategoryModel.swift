@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-enum Category: String, Codable {
+enum Category: String, Codable, CaseIterable {
     case clothes
     case books
     case tools
@@ -61,7 +61,7 @@ enum Category: String, Codable {
        case .tech:
            return Image("techicon")
        case .entertainment:
-           return Image("enterteinmenticon")
+           return Image("entertainmenticon")
        case .other:
            return Image("othericon")
        }

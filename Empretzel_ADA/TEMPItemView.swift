@@ -7,12 +7,34 @@
 
 import SwiftUI
 
-struct TEMPItemView: View {
+struct ItemView: View {
+    let item: Item
+    @State var itemAddedtoList = false
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            item.category.icon
+            Text(item.name)
+            Text(item.details)
+            
+            Button {
+                itemAddedtoList = true
+            } label: {
+                Text("Quero")
+            }
+            
+        }
+        .navigationDestination(isPresented: $itemAddedtoList) {
+            ItemConfirmationView()
+        }
     }
 }
 
-#Preview {
-    TEMPItemView()
+struct ItemConfirmationView: View {
+    var body: some View {
+        Text("Pedido confirmado")
+        Text("Agora o dono aprovará seu pedido.")
+    }
 }
+
+
