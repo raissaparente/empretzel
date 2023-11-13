@@ -11,11 +11,12 @@
 		B66223502AF82EE0008AA337 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B662234F2AF82EE0008AA337 /* Preview Assets.xcassets */; };
 		B66223572AF82EF4008AA337 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66223562AF82EF4008AA337 /* UserModel.swift */; };
 		B66223592AF82F00008AA337 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66223582AF82EFF008AA337 /* ItemModel.swift */; };
-		B662235B2AF82F12008AA337 /* TEMPFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B662235A2AF82F12008AA337 /* TEMPFeedView.swift */; };
+		B662235B2AF82F12008AA337 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B662235A2AF82F12008AA337 /* HomeView.swift */; };
 		B662235D2AF82F1E008AA337 /* TEMPUploadItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B662235C2AF82F1E008AA337 /* TEMPUploadItemView.swift */; };
 		B662235F2AF83069008AA337 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B662235E2AF83069008AA337 /* Assets.xcassets */; };
 		B68DCEB02AFD890000660B0F /* TEMPItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68DCEAF2AFD890000660B0F /* TEMPItemView.swift */; };
 		B6A131792AF9542000F5B66E /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A131782AF9542000F5B66E /* CategoryModel.swift */; };
+		B6CE84B12B0284CC0061DB3F /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CE84B02B0284CC0061DB3F /* FeedView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,11 +25,12 @@
 		B662234F2AF82EE0008AA337 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B66223562AF82EF4008AA337 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		B66223582AF82EFF008AA337 /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
-		B662235A2AF82F12008AA337 /* TEMPFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TEMPFeedView.swift; sourceTree = "<group>"; };
+		B662235A2AF82F12008AA337 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		B662235C2AF82F1E008AA337 /* TEMPUploadItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TEMPUploadItemView.swift; sourceTree = "<group>"; };
 		B662235E2AF83069008AA337 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../Empretzel/Empretzel/Assets.xcassets; sourceTree = "<group>"; };
 		B68DCEAF2AFD890000660B0F /* TEMPItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TEMPItemView.swift; sourceTree = "<group>"; };
 		B6A131782AF9542000F5B66E /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
+		B6CE84B02B0284CC0061DB3F /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +67,8 @@
 				B66223562AF82EF4008AA337 /* UserModel.swift */,
 				B66223582AF82EFF008AA337 /* ItemModel.swift */,
 				B6A131782AF9542000F5B66E /* CategoryModel.swift */,
-				B662235A2AF82F12008AA337 /* TEMPFeedView.swift */,
+				B662235A2AF82F12008AA337 /* HomeView.swift */,
+				B6CE84B02B0284CC0061DB3F /* FeedView.swift */,
 				B68DCEAF2AFD890000660B0F /* TEMPItemView.swift */,
 				B662235C2AF82F1E008AA337 /* TEMPUploadItemView.swift */,
 				B662235E2AF83069008AA337 /* Assets.xcassets */,
@@ -152,9 +155,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6CE84B12B0284CC0061DB3F /* FeedView.swift in Sources */,
 				B66223572AF82EF4008AA337 /* UserModel.swift in Sources */,
 				B6A131792AF9542000F5B66E /* CategoryModel.swift in Sources */,
-				B662235B2AF82F12008AA337 /* TEMPFeedView.swift in Sources */,
+				B662235B2AF82F12008AA337 /* HomeView.swift in Sources */,
 				B66223492AF82EDD008AA337 /* Empretzel_ADAApp.swift in Sources */,
 				B68DCEB02AFD890000660B0F /* TEMPItemView.swift in Sources */,
 				B662235D2AF82F1E008AA337 /* TEMPUploadItemView.swift in Sources */,
