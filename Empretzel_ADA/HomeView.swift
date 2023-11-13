@@ -14,10 +14,27 @@ struct TempFeedView: View {
     @State var displayUploadItemView: Bool = false
     @State var displayRequestView: Bool = false
     @State var selectedItem: Item? = nil
+    @State var searchText = ""
     
     
     var body: some View {
         NavigationStack {
+            ScrollView (.horizontal){
+                HStack {
+                    ForEach(Category.allCases, id: \.self) { category in
+                        HStack {
+                            Text(category.name)
+                                .font(.headline)
+                        }
+                        .padding(16)
+                        .frame(height: 35, alignment: .leading)
+                        .border(Color.eggplantpurple)
+                        .clipShape(.buttonBorder)
+                    }
+                }
+                .padding()
+            }
+
             ScrollView {
                 LazyVStack {
                     ForEach(items) { item in
@@ -32,20 +49,26 @@ struct TempFeedView: View {
                                 Text(item.name)
                                 Text(item.details)
                                 Text(item.category.name)
+                                    
                             }
                             .foregroundColor(item.category.color)
                     }
                     .onDelete(perform: deleteItem) //n ta funcionando agr por causa do botao
                 }
-                .navigationTitle("Itens")
+                .navigationTitle("Encontre Itens")
                 //botao de add item, vai ficar na tabbar depois
                 .toolbar {
                     Button {
                         displayUploadItemView = true
                     } label: {
-                        Image(systemName: "plus")
+                        Image(systemName: "plus.circle.fill")
+                            .foregroundStyle(.eggplantpurple)
+                            .font(.system(size: 30))
+                            
                     }
                 }
+                .searchable(text: $searchText, prompt: "Qual item está procurando?")
+                
                 //modal de publicar item
                 .sheet(isPresented: $displayUploadItemView) {
                     CategoryUploadView(displayUploadItemView: $displayUploadItemView)
