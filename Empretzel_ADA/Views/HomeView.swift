@@ -8,14 +8,15 @@
 import SwiftUI
 import SwiftData
 
-struct TempFeedView: View {
+struct HomeView: View {
     @Query var items: [Item]
  
     @State var displayUploadItemView: Bool = false
     @State var searchText = ""
     
     var body: some View {
-        NavigationStack {
+        LazyVStack {
+            
             ScrollView (.horizontal, showsIndicators: false){
                 CategoryFilterView(searchText: searchText)
             }

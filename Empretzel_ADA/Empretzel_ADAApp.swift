@@ -12,7 +12,7 @@ import SwiftData
 struct Empretzel_ADAApp: App {
     var body: some Scene {
         WindowGroup {
-            TempFeedView()
+            MainView()
         }
         .modelContainer(for: Item.self)
     }
