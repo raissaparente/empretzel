@@ -16,22 +16,8 @@ struct TempFeedView: View {
     
     var body: some View {
         NavigationStack {
-            ScrollView (.horizontal){
-                HStack {
-                    ForEach(Category.allCases, id: \.self) { category in
-                        Button {
-                            searchText = category.name
-                        } label: {
-                            Text(category.name)
-                                .font(.headline)
-                        }
-                        .padding(16)
-                        .frame(height: 35, alignment: .leading)
-                        .border(Color.eggplantpurple)
-                        .clipShape(.buttonBorder)
-                    }
-                }
-                .padding()
+            ScrollView (.horizontal, showsIndicators: false){
+                CategoryFilterView(searchText: searchText)
             }
 
             ScrollView {
@@ -58,5 +44,3 @@ struct TempFeedView: View {
         }
     }
     
-
-

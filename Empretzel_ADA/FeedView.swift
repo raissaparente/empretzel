@@ -17,6 +17,7 @@ struct FeedView: View {
     init(filterText: String) {
         let predicate = #Predicate<Item> { item in
             item.name.localizedStandardContains(filterText)
+            || item.details.localizedStandardContains(filterText)
             || filterText.isEmpty
         }
         _items = Query(filter: predicate)
