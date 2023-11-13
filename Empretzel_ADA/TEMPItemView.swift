@@ -9,7 +9,8 @@ import SwiftUI
 
 struct ItemView: View {
     let item: Item
-    @State var itemAddedtoList = false
+    @Binding var displayRequestView: Bool
+    @State var isNavigationActive = false
     
     var body: some View {
         NavigationStack {
@@ -18,22 +19,30 @@ struct ItemView: View {
             Text(item.details)
             
             Button {
-                itemAddedtoList = true
+                isNavigationActive = true
             } label: {
                 Text("Quero")
             }
-            
-        }
-        .navigationDestination(isPresented: $itemAddedtoList) {
-            ItemConfirmationView()
+            .navigationDestination(isPresented: $isNavigationActive) {
+                ItemConfirmationView(displayRequestView: $displayRequestView)
+            }
         }
     }
+    
+
 }
 
 struct ItemConfirmationView: View {
+    @Binding var displayRequestView: Bool
+    
     var body: some View {
         Text("Pedido confirmado")
         Text("Agora o dono aprovará seu pedido.")
+            .onAppear {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    displayRequestView = false
+                }
+            }
     }
 }
 

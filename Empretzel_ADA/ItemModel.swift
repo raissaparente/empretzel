@@ -6,7 +6,7 @@
 //
 
 import SwiftData
-import SwiftUI
+
 
 @Model
 class Item {

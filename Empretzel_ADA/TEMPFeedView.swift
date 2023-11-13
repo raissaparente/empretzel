@@ -15,15 +15,16 @@ struct TempFeedView: View {
     @State var displayRequestView: Bool = false
     @State var selectedItem: Item? = nil
     
+    
     var body: some View {
-        NavigationStack{
+        NavigationStack {
             ScrollView {
                 LazyVStack {
                     ForEach(items) { item in
                             Button {
                                 displayRequestView = true
                                 selectedItem = item
-                            }label: {
+                            } label: {
                                 //card do item, eventualmente vai ser uma view separada
                                 item.category.icon
                                     .resizable()
@@ -52,7 +53,7 @@ struct TempFeedView: View {
                 //modal de visualizar e pedir item
                 .sheet(isPresented: $displayRequestView) {
                     if let selectedItem = selectedItem {
-                        ItemView(item: selectedItem)
+                        ItemView(item: selectedItem, displayRequestView: $displayRequestView)
                     }
                 }
             }

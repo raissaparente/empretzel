@@ -14,17 +14,18 @@ import SwiftUI
 struct CategoryUploadView: View {
     @Bindable var item = Item()
     @Binding var displayUploadItemView: Bool
+    
     var body: some View {
         NavigationStack {
             Text("Escolha a categoria do seu item")
             
             ForEach(Category.allCases, id: \.self) { category in
-                            Button(category.name) {
-                                item.category = category
-                            }
-                        }
+                //botao fora do padrao, corrigir
+                Button(category.name) {
+                    item.category = category
+                }
+            }
 
-            
             NavigationLink(destination: NameUploadView(item: item, displayUploadItemView: $displayUploadItemView)) {
                 Text("Continuar")
             }
@@ -36,6 +37,7 @@ struct CategoryUploadView: View {
 struct NameUploadView: View {
     @Bindable var item: Item
     @Binding var displayUploadItemView: Bool
+    
     var body: some View {
         NavigationStack{
             Text("Descreva o seu item")
@@ -56,22 +58,24 @@ struct PictureUploadView: View {
     @Environment(\.modelContext) var context
     var item: Item
     @Binding var displayUploadItemView: Bool
-    @State var isLinkActive = false
+    @State var isNavigationActive = false
     
     var body: some View {
         NavigationStack {
             Text("Escolha uma foto do seu item")
+            
+            //placeholder pra imageui
             Rectangle()
                 .size(width: 100, height: 100)
             
             Button {
                 addItem(item: item)
-                isLinkActive = true
+                isNavigationActive = true
             } label: {
                 Text("Adicionar item")
             }
         }
-        .navigationDestination(isPresented: $isLinkActive) {
+        .navigationDestination(isPresented: $isNavigationActive) {
             ConfirmationUploadView(displayUploadItemView: $displayUploadItemView)
         }
     }
@@ -93,3 +97,4 @@ struct ConfirmationUploadView: View {
             }
     }
 }
+
