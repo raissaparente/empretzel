@@ -14,6 +14,8 @@
 		B662235B2AF82F12008AA337 /* TEMPFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B662235A2AF82F12008AA337 /* TEMPFeedView.swift */; };
 		B662235D2AF82F1E008AA337 /* TEMPUploadItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B662235C2AF82F1E008AA337 /* TEMPUploadItemView.swift */; };
 		B662235F2AF83069008AA337 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B662235E2AF83069008AA337 /* Assets.xcassets */; };
+		B68DCEB02AFD890000660B0F /* TEMPItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68DCEAF2AFD890000660B0F /* TEMPItemView.swift */; };
+		B6A131792AF9542000F5B66E /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A131782AF9542000F5B66E /* CategoryModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		B662235A2AF82F12008AA337 /* TEMPFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TEMPFeedView.swift; sourceTree = "<group>"; };
 		B662235C2AF82F1E008AA337 /* TEMPUploadItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TEMPUploadItemView.swift; sourceTree = "<group>"; };
 		B662235E2AF83069008AA337 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../Empretzel/Empretzel/Assets.xcassets; sourceTree = "<group>"; };
+		B68DCEAF2AFD890000660B0F /* TEMPItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TEMPItemView.swift; sourceTree = "<group>"; };
+		B6A131782AF9542000F5B66E /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +64,9 @@
 				B66223482AF82EDD008AA337 /* Empretzel_ADAApp.swift */,
 				B66223562AF82EF4008AA337 /* UserModel.swift */,
 				B66223582AF82EFF008AA337 /* ItemModel.swift */,
+				B6A131782AF9542000F5B66E /* CategoryModel.swift */,
 				B662235A2AF82F12008AA337 /* TEMPFeedView.swift */,
+				B68DCEAF2AFD890000660B0F /* TEMPItemView.swift */,
 				B662235C2AF82F1E008AA337 /* TEMPUploadItemView.swift */,
 				B662235E2AF83069008AA337 /* Assets.xcassets */,
 				B662234E2AF82EE0008AA337 /* Preview Content */,
@@ -147,8 +153,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B66223572AF82EF4008AA337 /* UserModel.swift in Sources */,
+				B6A131792AF9542000F5B66E /* CategoryModel.swift in Sources */,
 				B662235B2AF82F12008AA337 /* TEMPFeedView.swift in Sources */,
 				B66223492AF82EDD008AA337 /* Empretzel_ADAApp.swift in Sources */,
+				B68DCEB02AFD890000660B0F /* TEMPItemView.swift in Sources */,
 				B662235D2AF82F1E008AA337 /* TEMPUploadItemView.swift in Sources */,
 				B66223592AF82F00008AA337 /* ItemModel.swift in Sources */,
 			);
