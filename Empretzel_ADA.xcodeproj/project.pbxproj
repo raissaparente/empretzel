@@ -18,6 +18,9 @@
 		B6A131792AF9542000F5B66E /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A131782AF9542000F5B66E /* CategoryModel.swift */; };
 		B6CE84B12B0284CC0061DB3F /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CE84B02B0284CC0061DB3F /* FeedView.swift */; };
 		B6CE84B32B02B6AF0061DB3F /* CategoryFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CE84B22B02B6AF0061DB3F /* CategoryFilterView.swift */; };
+		B6CE84B72B02B8FC0061DB3F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CE84B62B02B8FC0061DB3F /* MainView.swift */; };
+		B6CE84B92B02B9C00061DB3F /* MyItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CE84B82B02B9C00061DB3F /* MyItemsView.swift */; };
+		B6CE84BB2B02B9D30061DB3F /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CE84BA2B02B9D30061DB3F /* ProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +36,9 @@
 		B6A131782AF9542000F5B66E /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		B6CE84B02B0284CC0061DB3F /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		B6CE84B22B02B6AF0061DB3F /* CategoryFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryFilterView.swift; sourceTree = "<group>"; };
+		B6CE84B62B02B8FC0061DB3F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		B6CE84B82B02B9C00061DB3F /* MyItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyItemsView.swift; sourceTree = "<group>"; };
+		B6CE84BA2B02B9D30061DB3F /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,15 +71,9 @@
 		B66223472AF82EDD008AA337 /* Empretzel_ADA */ = {
 			isa = PBXGroup;
 			children = (
+				B6CE84B52B02B8A40061DB3F /* Model */,
+				B6CE84B42B02B8960061DB3F /* Views */,
 				B66223482AF82EDD008AA337 /* Empretzel_ADAApp.swift */,
-				B66223562AF82EF4008AA337 /* UserModel.swift */,
-				B66223582AF82EFF008AA337 /* ItemModel.swift */,
-				B6A131782AF9542000F5B66E /* CategoryModel.swift */,
-				B662235A2AF82F12008AA337 /* HomeView.swift */,
-				B6CE84B22B02B6AF0061DB3F /* CategoryFilterView.swift */,
-				B6CE84B02B0284CC0061DB3F /* FeedView.swift */,
-				B68DCEAF2AFD890000660B0F /* TEMPItemView.swift */,
-				B662235C2AF82F1E008AA337 /* TEMPUploadItemView.swift */,
 				B662235E2AF83069008AA337 /* Assets.xcassets */,
 				B662234E2AF82EE0008AA337 /* Preview Content */,
 			);
@@ -86,6 +86,31 @@
 				B662234F2AF82EE0008AA337 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B6CE84B42B02B8960061DB3F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B662235A2AF82F12008AA337 /* HomeView.swift */,
+				B6CE84B62B02B8FC0061DB3F /* MainView.swift */,
+				B6CE84B82B02B9C00061DB3F /* MyItemsView.swift */,
+				B6CE84BA2B02B9D30061DB3F /* ProfileView.swift */,
+				B6CE84B22B02B6AF0061DB3F /* CategoryFilterView.swift */,
+				B6CE84B02B0284CC0061DB3F /* FeedView.swift */,
+				B68DCEAF2AFD890000660B0F /* TEMPItemView.swift */,
+				B662235C2AF82F1E008AA337 /* TEMPUploadItemView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B6CE84B52B02B8A40061DB3F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B66223562AF82EF4008AA337 /* UserModel.swift */,
+				B66223582AF82EFF008AA337 /* ItemModel.swift */,
+				B6A131782AF9542000F5B66E /* CategoryModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,6 +186,9 @@
 				B6CE84B12B0284CC0061DB3F /* FeedView.swift in Sources */,
 				B66223572AF82EF4008AA337 /* UserModel.swift in Sources */,
 				B6CE84B32B02B6AF0061DB3F /* CategoryFilterView.swift in Sources */,
+				B6CE84B72B02B8FC0061DB3F /* MainView.swift in Sources */,
+				B6CE84BB2B02B9D30061DB3F /* ProfileView.swift in Sources */,
+				B6CE84B92B02B9C00061DB3F /* MyItemsView.swift in Sources */,
 				B6A131792AF9542000F5B66E /* CategoryModel.swift in Sources */,
 				B662235B2AF82F12008AA337 /* HomeView.swift in Sources */,
 				B66223492AF82EDD008AA337 /* Empretzel_ADAApp.swift in Sources */,
