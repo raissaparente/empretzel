@@ -10,38 +10,37 @@ import SwiftData
 
 struct HomeView: View {
     @Query var items: [Item]
- 
+    
     @State var displayUploadItemView: Bool = false
     @State var searchText = ""
     
     var body: some View {
-        LazyVStack {
+        NavigationStack {
             
             ScrollView (.horizontal, showsIndicators: false){
                 CategoryFilterView(searchText: searchText)
             }
-
+            
             ScrollView {
                 FeedView(filterText: searchText)
+            }
+            .navigationTitle("Encontre Itens")
+            .toolbar {
+                Button {
+                    displayUploadItemView = true
+                } label: {
+                    Image(systemName: "plus.circle.fill")
+                        .foregroundStyle(.eggplantpurple)
+                        .font(.system(size: 30))
                 }
-                .navigationTitle("Encontre Itens")
-                .toolbar {
-                    Button {
-                        displayUploadItemView = true
-                    } label: {
-                        Image(systemName: "plus.circle.fill")
-                            .foregroundStyle(.eggplantpurple)
-                            .font(.system(size: 30))
-                            
-                    }
-                }
-                .searchable(text: $searchText, prompt: "Qual item está procurando?")
-                
-                //modal de publicar item
-                .sheet(isPresented: $displayUploadItemView) {
-                    CategoryUploadView(displayUploadItemView: $displayUploadItemView)
-                }                
+            }
+            .searchable(text: $searchText, prompt: "Qual item está procurando?")
+            
+            //modal de publicar item
+            .sheet(isPresented: $displayUploadItemView) {
+                CategoryUploadView(displayUploadItemView: $displayUploadItemView)
             }
         }
     }
-    
+}
+

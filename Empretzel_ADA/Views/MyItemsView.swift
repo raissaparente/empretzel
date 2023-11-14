@@ -56,20 +56,6 @@ struct MyItemsView: View {
             Text("Um dia isso será uma listagem de itens")
             Text("Um dia isso será uma listagem de itens")
             Text("Um dia isso será uma listagem de itens")
-            Text("Um dia isso será uma listagem de itens")
-            Text("Um dia isso será uma listagem de itens")
-            Text("Um dia isso será uma listagem de itens")
-            Text("Um dia isso será uma listagem de itens")
-            Text("Um dia isso será uma listagem de itens")
-            Text("Um dia isso será uma listagem de itens")
-            Text("Um dia isso será uma listagem de itens")
-            Text("Um dia isso será uma listagem de itens")
-            Text("Um dia isso será uma listagem de itens")
-            Text("Um dia isso será uma listagem de itens")
-            Text("Um dia isso será uma listagem de itens")
-            Text("Um dia isso será uma listagem de itens")
-            Text("Um dia isso será uma listagem de itens")
-            Text("Um dia isso será uma listagem de itens")
         }
  
     }
