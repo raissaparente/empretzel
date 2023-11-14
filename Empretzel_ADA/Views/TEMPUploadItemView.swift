@@ -25,12 +25,14 @@ struct CategoryUploadView: View {
                     item.category = category
                 }
             }
-
+            
             NavigationLink(destination: NameUploadView(item: item, displayUploadItemView: $displayUploadItemView)) {
                 Text("Continuar")
             }
+            .navigationTitle("Categoria")
+            .navigationBarTitleDisplayMode(.inline)
         }
-
+        
     }
 }
 
@@ -43,15 +45,20 @@ struct NameUploadView: View {
             Text("Descreva o seu item")
             
             TextField("Nome", text: $item.name)
-            TextField("Descrição", text: $item.details)
+                .textFieldStyle(.roundedBorder)
+            TextField("Descrição", text: $item.details, axis: .vertical)
+                .lineLimit(5...10)
+                .textFieldStyle(.roundedBorder)
             
             NavigationLink(destination: PictureUploadView(item: item, displayUploadItemView: $displayUploadItemView)) {
                 Text("Continuar")
             }
+            .navigationTitle("Descrição")
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
     
-
+    
 }
 
 struct PictureUploadView: View {
@@ -74,6 +81,8 @@ struct PictureUploadView: View {
             } label: {
                 Text("Adicionar item")
             }
+            .navigationTitle("Imagem")
+            .navigationBarTitleDisplayMode(.inline)
         }
         .navigationDestination(isPresented: $isNavigationActive) {
             ConfirmationUploadView(displayUploadItemView: $displayUploadItemView)
