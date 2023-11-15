@@ -24,26 +24,20 @@ struct FeedView: View {
     }
     
     var body: some View {
-        ForEach(items) { item in
+        VStack {
+            ForEach(items) { item in
                 Button {
                     displayRequestView = true
                     selectedItem = item
                 } label: {
-                    //card do item, eventualmente vai ser uma view separada
-                    item.category.icon
-                        .resizable()
-                        .frame(width: 50, height: 50)
-                    Text(item.name)
-                    Text(item.details)
-                    Text(item.category.name)
-                        
+                    CardView(categoryName: item.category.name,categoryColor: item.category.color, itemName: item.name, itemDetails: item.details, itemImage: item.category.icon)
                 }
-                .foregroundColor(item.category.color)
-        }
-        .onDelete(perform: deleteItem) //n ta funcionando agr por causa do botao
-        .sheet(isPresented: $displayRequestView) {
-            if let selectedItem = selectedItem {
-                ItemView(item: selectedItem, displayRequestView: $displayRequestView)
+            }
+            .onDelete(perform: deleteItem) //n ta funcionando agr por causa do botao
+            .sheet(isPresented: $displayRequestView) {
+                if let selectedItem = selectedItem {
+                    ItemView(item: selectedItem, displayRequestView: $displayRequestView)
+                }
             }
         }
     }
