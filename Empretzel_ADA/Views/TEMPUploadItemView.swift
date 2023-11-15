@@ -14,51 +14,100 @@ import SwiftUI
 struct CategoryUploadView: View {
     @Bindable var item = Item()
     @Binding var displayUploadItemView: Bool
+    @State var categoryClicked: Category?
+    
+    let columns = [
+        GridItem(.adaptive(minimum: 100))
+    ]
     
     var body: some View {
         NavigationStack {
-            Text("Escolha a categoria do seu item")
             
-            ForEach(Category.allCases, id: \.self) { category in
-                //botao fora do padrao, corrigir
-                Button(category.name) {
-                    item.category = category
+            Image("categoryicon")
+            Text("Escolha a categoria")
+                .font(.largeTitle)
+                .bold()
+            
+            LazyVGrid(columns: columns) {
+                ForEach(Category.allCases, id: \.self) { category in
+                    Button {
+                        item.category = category
+                        categoryClicked = category
+                    } label: {
+                        VStack {
+                            Image(category.icon)
+                                .resizable()
+                                .frame(width: 70, height: 70)
+                                .padding(10)
+                                .overlay {
+                                    if categoryClicked != category {
+                                        RoundedRectangle(cornerRadius: 5)
+                                            .stroke(.accent, lineWidth: 1)
+                                            .fill(.white.opacity(0.4))
+                                    } else {
+                                        RoundedRectangle(cornerRadius: 5)
+                                            .stroke(.accent, lineWidth: 2)
+                                    }
+                                }
+                            
+                            Text(category.name)
+                        }
+                    }
                 }
             }
+            .padding(30)
             
             NavigationLink(destination: NameUploadView(item: item, displayUploadItemView: $displayUploadItemView)) {
-                Text("Continuar")
+                MakeButtonLink(text: "Próximo")
             }
             .navigationTitle("Categoria")
             .navigationBarTitleDisplayMode(.inline)
         }
-        
     }
 }
+
+
 
 struct NameUploadView: View {
     @Bindable var item: Item
     @Binding var displayUploadItemView: Bool
     
     var body: some View {
-        NavigationStack{
-            Text("Descreva o seu item")
-            
-            TextField("Nome", text: $item.name)
-                .textFieldStyle(.roundedBorder)
-            TextField("Descrição", text: $item.details, axis: .vertical)
-                .lineLimit(5...10)
-                .textFieldStyle(.roundedBorder)
-            
-            NavigationLink(destination: PictureUploadView(item: item, displayUploadItemView: $displayUploadItemView)) {
-                Text("Continuar")
+        NavigationStack {
+            ZStack {
+                Color.lightgray
+                    .ignoresSafeArea()
+                
+                VStack {
+                    
+                    Image("writeicon")
+                    Text("Preencha os dados")
+                        .font(.largeTitle)
+                        .bold()
+                    
+                    
+                    Form {
+                        Section(header: Text("Nome")) {
+                            TextField("Titulo do seu anúncio", text: $item.name)
+                            
+                        }
+                        
+                        Section(header: Text("Descrição")) {
+                            TextField("Descreva o seu item.\nEx.: Jogo Dixit, ótimo estado, apenas faltando 2 cartas", text: $item.details, axis: .vertical)
+                                .lineLimit(5...10)
+                        }
+                    }
+                    
+                    NavigationLink(destination: PictureUploadView(item: item, displayUploadItemView: $displayUploadItemView)) {
+                        MakeButtonLink(text: "Próximo")
+                    }
+                }
+                .padding()
+                .navigationTitle("Descrição")
+                .navigationBarTitleDisplayMode(.inline)
             }
-            .navigationTitle("Descrição")
-            .navigationBarTitleDisplayMode(.inline)
         }
     }
-    
-    
 }
 
 struct PictureUploadView: View {
@@ -67,31 +116,54 @@ struct PictureUploadView: View {
     @Binding var displayUploadItemView: Bool
     @State var isNavigationActive = false
     
+    
     var body: some View {
         NavigationStack {
-            Text("Escolha uma foto do seu item")
-            
-            //placeholder pra imageui
-            Rectangle()
-                .size(width: 100, height: 100)
-            
-            Button {
-                addItem(item: item)
-                isNavigationActive = true
-            } label: {
-                Text("Adicionar item")
+            ZStack {
+                Color.lightgray
+                    .ignoresSafeArea()
+                
+                VStack (spacing: 30) {
+                    Image("pictureicon")
+                    Text("Selecione uma foto")
+                        .font(.largeTitle)
+                        .bold()
+                    
+                    
+                    Image(systemName: "camera")
+                        .font(.system(size: 40))
+                        .foregroundStyle(.white)
+                        .frame(width: 300, height: 300)
+                        .background(.gray.opacity(0.5))
+                        .clipShape(RoundedRectangle(cornerRadius: 15))
+                    
+                    
+                    Button {
+                        addItem(item: item)
+                        isNavigationActive = true
+                    } label: {
+                        Text("Publicar")
+                            .padding(0)
+                            .font(.title2)
+                            .frame(width: 280, height: 40)
+                    }
+                    .buttonStyle(.borderedProminent)
+                    
+                }
+                .padding(30)
+                .navigationTitle("Imagem")
+                .navigationBarTitleDisplayMode(.inline)
             }
-            .navigationTitle("Imagem")
-            .navigationBarTitleDisplayMode(.inline)
-        }
-        .navigationDestination(isPresented: $isNavigationActive) {
-            ConfirmationUploadView(displayUploadItemView: $displayUploadItemView)
+            .navigationDestination(isPresented: $isNavigationActive) {
+                ConfirmationUploadView(displayUploadItemView: $displayUploadItemView)
+            }
         }
     }
     
     func addItem(item: Item) {
         context.insert(item)
     }
+    
 }
 
 struct ConfirmationUploadView: View {
@@ -104,6 +176,22 @@ struct ConfirmationUploadView: View {
                     displayUploadItemView = false
                 }
             }
+    }
+}
+
+
+struct MakeButtonLink: View {
+    let text: String
+    
+    var body: some View {
+        VStack {
+            Text(text)
+                .font(.title2)
+                .foregroundStyle(.white)
+        }
+        .frame(width: 300, height: 50)
+        .background(.accent)
+        .clipShape(RoundedRectangle(cornerRadius: 12))
     }
 }
 

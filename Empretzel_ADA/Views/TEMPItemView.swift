@@ -23,7 +23,7 @@ struct ItemView: View {
                 VStack {
                     
                     VStack (spacing: 20) {
-                        item.category.icon
+                        Image(item.category.icon)
                         Text(item.name)
                             .font(.title3)
                             .bold()
@@ -94,7 +94,7 @@ struct ItemConfirmationView: View {
                 .ignoresSafeArea()
             VStack {
                 VStack (spacing: 40){
-                    item.category.icon
+                    Image(item.category.icon)
                     Text(item.name)
                         .font(.title3)
                         .bold()
@@ -111,7 +111,7 @@ struct ItemConfirmationView: View {
                     
                     Image("logopurple")
                         .resizable()
-                        .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 100)
+                        .frame(width: 100, height: 100)
                 }
                 .padding()
                 .frame(maxWidth: .infinity, minHeight: 500)
