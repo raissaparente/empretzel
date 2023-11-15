@@ -50,20 +50,20 @@ enum Category: String, Codable, CaseIterable {
        }
    }
     
-    var icon: Image {
+    var icon: String {
        switch self {
        case .clothes:
-           return Image("clothesicon")
+           return "clothesicon"
        case .books:
-           return Image("bookicon")
+           return "bookicon"
        case .tools:
-           return Image("toolicon")
+           return "toolicon"
        case .tech:
-           return Image("techicon")
+           return "techicon"
        case .entertainment:
-           return Image("entertainmenticon")
+           return "entertainmenticon"
        case .other:
-           return Image("othericon")
+           return "othericon"
        }
    }
 }
