@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B616FB752B03F2CB00B31F97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B616FB742B03F2CB00B31F97 /* Assets.xcassets */; };
+		B616FB772B05325D00B31F97 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B616FB762B05325D00B31F97 /* CardView.swift */; };
 		B66223492AF82EDD008AA337 /* Empretzel_ADAApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66223482AF82EDD008AA337 /* Empretzel_ADAApp.swift */; };
 		B66223502AF82EE0008AA337 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B662234F2AF82EE0008AA337 /* Preview Assets.xcassets */; };
 		B66223572AF82EF4008AA337 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66223562AF82EF4008AA337 /* UserModel.swift */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		B616FB742B03F2CB00B31F97 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B616FB762B05325D00B31F97 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		B66223452AF82EDD008AA337 /* Empretzel_ADA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Empretzel_ADA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B66223482AF82EDD008AA337 /* Empretzel_ADAApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Empretzel_ADAApp.swift; sourceTree = "<group>"; };
 		B662234F2AF82EE0008AA337 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				B662235A2AF82F12008AA337 /* HomeView.swift */,
 				B6CE84B62B02B8FC0061DB3F /* MainView.swift */,
 				B6CE84B82B02B9C00061DB3F /* MyItemsView.swift */,
+				B616FB762B05325D00B31F97 /* CardView.swift */,
 				B6CE84BA2B02B9D30061DB3F /* ProfileView.swift */,
 				B6CE84B22B02B6AF0061DB3F /* CategoryFilterView.swift */,
 				B6CE84B02B0284CC0061DB3F /* FeedView.swift */,
@@ -190,6 +193,7 @@
 				B6CE84BB2B02B9D30061DB3F /* ProfileView.swift in Sources */,
 				B6CE84B92B02B9C00061DB3F /* MyItemsView.swift in Sources */,
 				B6A131792AF9542000F5B66E /* CategoryModel.swift in Sources */,
+				B616FB772B05325D00B31F97 /* CardView.swift in Sources */,
 				B662235B2AF82F12008AA337 /* HomeView.swift in Sources */,
 				B66223492AF82EDD008AA337 /* Empretzel_ADAApp.swift in Sources */,
 				B68DCEB02AFD890000660B0F /* TEMPItemView.swift in Sources */,
