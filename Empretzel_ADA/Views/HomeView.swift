@@ -17,28 +17,36 @@ struct HomeView: View {
     var body: some View {
         NavigationStack {
             
-            ScrollView (.horizontal, showsIndicators: false){
-                CategoryFilterView(searchText: searchText)
-            }
-            
-            ScrollView {
-                FeedView(filterText: searchText)
-            }
-            .navigationTitle("Encontre Itens")
-            .toolbar {
-                Button {
-                    displayUploadItemView = true
-                } label: {
-                    Image(systemName: "plus.circle.fill")
-                        .foregroundStyle(.eggplantpurple)
-                        .font(.system(size: 30))
+            ZStack {
+                Color.lightgray
+                    .ignoresSafeArea()
+                
+                VStack{
+                    
+                    ScrollView (.horizontal, showsIndicators: false){
+                        CategoryFilterView(searchText: searchText)
+                    }
+                    
+                    ScrollView {
+                        FeedView(filterText: searchText)
+                    }
+                    .navigationTitle("Encontre Itens")
+                    .toolbar {
+                        Button {
+                            displayUploadItemView = true
+                        } label: {
+                            Image(systemName: "plus.circle.fill")
+                                .foregroundStyle(.eggplantpurple)
+                                .font(.system(size: 30))
+                        }
+                    }
+                    .searchable(text: $searchText, prompt: "Qual item está procurando?")
+                    
+                    //modal de publicar item
+                    .sheet(isPresented: $displayUploadItemView) {
+                        CategoryUploadView(displayUploadItemView: $displayUploadItemView)
+                    }
                 }
-            }
-            .searchable(text: $searchText, prompt: "Qual item está procurando?")
-            
-            //modal de publicar item
-            .sheet(isPresented: $displayUploadItemView) {
-                CategoryUploadView(displayUploadItemView: $displayUploadItemView)
             }
         }
     }
