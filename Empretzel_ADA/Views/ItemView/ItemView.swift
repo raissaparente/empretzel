@@ -23,7 +23,9 @@ struct ItemView: View {
                 VStack {
                     
                     VStack (spacing: 20) {
-                        Image(item.category.icon)
+                        Image(item.category.picture)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
                         Text(item.name)
                             .font(.title3)
                             .bold()
@@ -82,84 +84,8 @@ struct ItemView: View {
     }
 }
 
-struct ItemConfirmationView: View {
-    let item: Item
-    @Binding var displayRequestView: Bool
-    
-    var body: some View {
-        
-        ZStack {
-            
-            Color.lightgray
-                .ignoresSafeArea()
-            VStack {
-                VStack (spacing: 40){
-                    Image(item.category.icon)
-                    Text(item.name)
-                        .font(.title3)
-                        .bold()
-                        .foregroundStyle(.accent)
-                    
-                    
-                    Text("Solicitação enviada!")
-                        .font(.largeTitle)
-                        .onAppear {
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                                displayRequestView = false
-                            }
-                        }
-                    
-                    Image("logopurple")
-                        .resizable()
-                        .frame(width: 100, height: 100)
-                }
-                .padding()
-                .frame(maxWidth: .infinity, minHeight: 500)
-                .background(.white)
-                .clipShape(RoundedRectangle(cornerRadius: 20))
-            }
-            .padding()
-            .navigationTitle("Item")
-            .navigationBarTitleDisplayMode(.inline)
-        }
-    }
-}
 
 
-struct MakeRequestInstruction: View {
-    var number: String
-    var text: String
-    
-    var body: some View {
-        HStack {
-            Text(number)
-                .bold()
-                .padding(5)
-                .foregroundStyle(.white)
-                .background(Circle().fill(.accent))
-            Text(text)
-                .italic()
-        }
-    }
-}
 
-struct MakeCapsuleTag: View {
-    var text: String
-    var textColor: Color
-    var borderColor: Color
-    
-    var body: some View {
-        VStack {
-            Text(text)
-                .foregroundStyle(textColor)
-                .font(.system(size: 13))
-        }
-        .padding(.horizontal, 10)
-        .padding(.vertical, 5)
-        .background {
-            Capsule(style: .circular)
-                .strokeBorder(borderColor, lineWidth: 0.8)
-                .background(Capsule().fill(borderColor.opacity(0.2)))
-        }
-    }
-}
+
+

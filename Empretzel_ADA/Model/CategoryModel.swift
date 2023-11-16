@@ -66,5 +66,23 @@ enum Category: String, Codable, CaseIterable {
            return "othericon"
        }
    }
+    
+    var picture: String {
+       switch self {
+       case .clothes:
+           return "clothespic"
+       case .books:
+           return "bookpic"
+       case .tools:
+           return "toolpic"
+       case .tech:
+           return "techpic"
+       case .entertainment:
+           return "entertainmentpic"
+       case .other:
+           return "otherpic"
+       }
+   }
+    
 }
 
