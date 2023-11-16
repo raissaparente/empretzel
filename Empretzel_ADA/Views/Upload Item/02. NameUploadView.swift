@@ -21,6 +21,9 @@ struct NameUploadView: View {
                 VStack {
                     
                     Image("writeicon")
+                        .resizable()
+                        .frame(width: 100, height: 100)
+                    
                     Text("Preencha os dados")
                         .font(.largeTitle)
                         .bold()

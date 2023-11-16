@@ -21,6 +21,9 @@ struct CategoryUploadView: View {
         NavigationStack {
             
             Image("categoryicon")
+                .resizable()
+                .frame(width: 100, height: 100)
+            
             Text("Escolha a categoria")
                 .font(.largeTitle)
                 .bold()

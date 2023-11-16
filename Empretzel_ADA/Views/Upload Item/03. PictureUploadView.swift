@@ -23,6 +23,9 @@ struct PictureUploadView: View {
                 
                 VStack (spacing: 30) {
                     Image("pictureicon")
+                        .resizable()
+                        .frame(width: 100, height: 100)
+                    
                     Text("Selecione uma foto")
                         .font(.largeTitle)
                         .bold()
