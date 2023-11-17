@@ -45,7 +45,7 @@ struct ItemView: View {
                         //Tags
                         HStack {
                             MakeCapsuleTag(text: item.category.name.uppercased(), textColor: item.category.color, borderColor: item.category.color)
-                            MakeCapsuleTag(text: "Bom estado".uppercased(), textColor: item.category.color, borderColor: item.category.color)
+                            MakeCapsuleTag(text: stateString(state: item.state).uppercased(), textColor: item.category.color, borderColor: item.category.color)
                         }
                         
                         //Instrucoes de emprestimo
@@ -80,6 +80,16 @@ struct ItemView: View {
                     ItemConfirmationView(item: item, displayRequestView: $displayRequestView)
                 }
             }
+        }
+    }
+    
+    func stateString(state: Int) -> String{
+        if state == 1 {
+            return "Danificado"
+        } else if state == 3 {
+            return "Excelente"
+        } else {
+            return "Bom estado"
         }
     }
 }

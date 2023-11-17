@@ -66,6 +66,7 @@ struct CategoryUploadView: View {
             }
             .navigationTitle("Categoria")
             .navigationBarTitleDisplayMode(.inline)
+            .disabled(categoryClicked == nil)
         }
     }
 }

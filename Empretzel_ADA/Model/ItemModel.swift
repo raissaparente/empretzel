@@ -17,7 +17,7 @@ class Item {
 //    var lender: User
 //    var borrower: User?
     
-    init(name: String = "", category: Category = Category.other, details: String = "", state: Int = 2) {
+    init(name: String = "", category: Category = Category.other, details: String = "", state: Int = 0) {
         self.name = name
         self.category = category
         self.details = details

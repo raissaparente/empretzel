@@ -83,6 +83,5 @@ enum Category: String, Codable, CaseIterable {
            return "otherpic"
        }
    }
-    
 }
 
