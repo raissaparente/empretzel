@@ -14,6 +14,6 @@ struct Empretzel_ADAApp: App {
         WindowGroup {
             MainView()
         }
-        .modelContainer(for: Item.self)
+        .modelContainer(for: [Item.self, User.self])
     }
 }

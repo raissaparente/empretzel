@@ -31,7 +31,7 @@ struct ItemView: View {
                             .bold()
                             .foregroundStyle(.accent)
                         
-                        MakeCapsuleTag(text: "Dono: Mariana", textColor: item.category.color, borderColor: item.category.color)
+                        MakeCapsuleTag(text: "Dono: \(item.lender.name)", textColor: item.category.color, borderColor: item.category.color)
                         
                         //Descricao
                         VStack {

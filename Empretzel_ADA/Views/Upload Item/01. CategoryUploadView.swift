@@ -9,6 +9,7 @@ import SwiftData
 import SwiftUI
 
 struct CategoryUploadView: View {
+    
     @Bindable var item = Item()
     @Binding var displayUploadItemView: Bool
     @State var categoryClicked: Category?
