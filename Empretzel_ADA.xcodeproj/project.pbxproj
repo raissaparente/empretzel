@@ -18,13 +18,14 @@
 		B616FB8B2B06C61E00B31F97 /* MakeRequestInstruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B616FB8A2B06C61E00B31F97 /* MakeRequestInstruction.swift */; };
 		B616FB8D2B06C63900B31F97 /* MakeCapsuleTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = B616FB8C2B06C63900B31F97 /* MakeCapsuleTag.swift */; };
 		B62D25AE2B07E3F7005E8165 /* ItemStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62D25AD2B07E3F7005E8165 /* ItemStateModel.swift */; };
-		B62D25B02B07FB39005E8165 /* TestUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62D25AF2B07FB39005E8165 /* TestUser.swift */; };
+		B62D25B02B07FB39005E8165 /* TestUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62D25AF2B07FB39005E8165 /* TestUsers.swift */; };
 		B66223492AF82EDD008AA337 /* Empretzel_ADAApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66223482AF82EDD008AA337 /* Empretzel_ADAApp.swift */; };
 		B66223502AF82EE0008AA337 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B662234F2AF82EE0008AA337 /* Preview Assets.xcassets */; };
 		B66223572AF82EF4008AA337 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66223562AF82EF4008AA337 /* UserModel.swift */; };
 		B66223592AF82F00008AA337 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66223582AF82EFF008AA337 /* ItemModel.swift */; };
 		B662235B2AF82F12008AA337 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B662235A2AF82F12008AA337 /* HomeView.swift */; };
 		B68DCEB02AFD890000660B0F /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68DCEAF2AFD890000660B0F /* ItemView.swift */; };
+		B69D23FD2B0BDE6400C1B171 /* CurrentUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69D23FC2B0BDE6400C1B171 /* CurrentUserManager.swift */; };
 		B6A131792AF9542000F5B66E /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A131782AF9542000F5B66E /* CategoryModel.swift */; };
 		B6CE84B12B0284CC0061DB3F /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CE84B02B0284CC0061DB3F /* FeedView.swift */; };
 		B6CE84B32B02B6AF0061DB3F /* CategoryFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CE84B22B02B6AF0061DB3F /* CategoryFilterView.swift */; };
@@ -45,7 +46,7 @@
 		B616FB8A2B06C61E00B31F97 /* MakeRequestInstruction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeRequestInstruction.swift; sourceTree = "<group>"; };
 		B616FB8C2B06C63900B31F97 /* MakeCapsuleTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeCapsuleTag.swift; sourceTree = "<group>"; };
 		B62D25AD2B07E3F7005E8165 /* ItemStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemStateModel.swift; sourceTree = "<group>"; };
-		B62D25AF2B07FB39005E8165 /* TestUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUser.swift; sourceTree = "<group>"; };
+		B62D25AF2B07FB39005E8165 /* TestUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUsers.swift; sourceTree = "<group>"; };
 		B66223452AF82EDD008AA337 /* Empretzel_ADA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Empretzel_ADA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B66223482AF82EDD008AA337 /* Empretzel_ADAApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Empretzel_ADAApp.swift; sourceTree = "<group>"; };
 		B662234F2AF82EE0008AA337 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -53,6 +54,7 @@
 		B66223582AF82EFF008AA337 /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
 		B662235A2AF82F12008AA337 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		B68DCEAF2AFD890000660B0F /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
+		B69D23FC2B0BDE6400C1B171 /* CurrentUserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserManager.swift; sourceTree = "<group>"; };
 		B6A131782AF9542000F5B66E /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		B6CE84B02B0284CC0061DB3F /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		B6CE84B22B02B6AF0061DB3F /* CategoryFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryFilterView.swift; sourceTree = "<group>"; };
@@ -85,10 +87,10 @@
 		B616FB7C2B06C49B00B31F97 /* Upload Item */ = {
 			isa = PBXGroup;
 			children = (
-				B616FB832B06C4F800B31F97 /* 04. ConfirmationUploadView.swift */,
-				B616FB812B06C4F000B31F97 /* 03. PictureUploadView.swift */,
 				B616FB7D2B06C4C500B31F97 /* 01. CategoryUploadView.swift */,
 				B616FB7F2B06C4E400B31F97 /* 02. NameUploadView.swift */,
+				B616FB812B06C4F000B31F97 /* 03. PictureUploadView.swift */,
+				B616FB832B06C4F800B31F97 /* 04. ConfirmationUploadView.swift */,
 			);
 			path = "Upload Item";
 			sourceTree = "<group>";
@@ -186,7 +188,8 @@
 				B66223582AF82EFF008AA337 /* ItemModel.swift */,
 				B6A131782AF9542000F5B66E /* CategoryModel.swift */,
 				B62D25AD2B07E3F7005E8165 /* ItemStateModel.swift */,
-				B62D25AF2B07FB39005E8165 /* TestUser.swift */,
+				B62D25AF2B07FB39005E8165 /* TestUsers.swift */,
+				B69D23FC2B0BDE6400C1B171 /* CurrentUserManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -276,12 +279,13 @@
 				B616FB802B06C4E400B31F97 /* 02. NameUploadView.swift in Sources */,
 				B616FB772B05325D00B31F97 /* CardView.swift in Sources */,
 				B616FB842B06C4F800B31F97 /* 04. ConfirmationUploadView.swift in Sources */,
+				B69D23FD2B0BDE6400C1B171 /* CurrentUserManager.swift in Sources */,
 				B662235B2AF82F12008AA337 /* HomeView.swift in Sources */,
 				B66223492AF82EDD008AA337 /* Empretzel_ADAApp.swift in Sources */,
 				B62D25AE2B07E3F7005E8165 /* ItemStateModel.swift in Sources */,
 				B68DCEB02AFD890000660B0F /* ItemView.swift in Sources */,
 				B616FB8D2B06C63900B31F97 /* MakeCapsuleTag.swift in Sources */,
-				B62D25B02B07FB39005E8165 /* TestUser.swift in Sources */,
+				B62D25B02B07FB39005E8165 /* TestUsers.swift in Sources */,
 				B66223592AF82F00008AA337 /* ItemModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
