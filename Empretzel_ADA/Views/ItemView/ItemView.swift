@@ -64,6 +64,7 @@ struct ItemView: View {
                     
                     Button {
                         isNavigationActive = true
+                        CurrentUserManager.currentUser.borrowedItems.append(item)
                     } label: {
                         Text("Quero")
                             .font(.title2)

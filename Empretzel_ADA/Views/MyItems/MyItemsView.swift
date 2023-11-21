@@ -6,57 +6,26 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct MyItemsView: View {
+    
     var body: some View {
-        List {
-            Text("Um dia isso será uma listagem de itens")
-            Text("Um dia isso será uma listagem de itens")
-            Text("Um dia isso será uma listagem de itens")
-            Text("Um dia isso será uma listagem de itens")
-            Text("Um dia isso será uma listagem de itens")
-            Text("Um dia isso será uma listagem de itens")
-            Text("Um dia isso será uma listagem de itens")
-            Text("Um dia isso será uma listagem de itens")
-            Text("Um dia isso será uma listagem de itens")
-            Text("Um dia isso será uma listagem de itens")
-            Text("Um dia isso será uma listagem de itens")
-            Text("Um dia isso será uma listagem de itens")
-            Text("Um dia isso será uma listagem de itens")
-            Text("Um dia isso será uma listagem de itens")
-            Text("Um dia isso será uma listagem de itens")
-            Text("Um dia isso será uma listagem de itens")
-            Text("Um dia isso será uma listagem de itens")
-            Text("Um dia isso será uma listagem de itens")
-            Text("Um dia isso será uma listagem de itens")
-            Text("Um dia isso será uma listagem de itens")
-            Text("Um dia isso será uma listagem de itens")
-            Text("Um dia isso será uma listagem de itens")
-            Text("Um dia isso será uma listagem de itens")
-            Text("Um dia isso será uma listagem de itens")
-            Text("Um dia isso será uma listagem de itens")
-            Text("Um dia isso será uma listagem de itens")
-            Text("Um dia isso será uma listagem de itens")
-            Text("Um dia isso será uma listagem de itens")
-            Text("Um dia isso será uma listagem de itens")
-            Text("Um dia isso será uma listagem de itens")
-            Text("Um dia isso será uma listagem de itens")
-            Text("Um dia isso será uma listagem de itens")
-            Text("Um dia isso será uma listagem de itens")
-            Text("Um dia isso será uma listagem de itens")
-            Text("Um dia isso será uma listagem de itens")
-            Text("Um dia isso será uma listagem de itens")
-            Text("Um dia isso será uma listagem de itens")
-            Text("Um dia isso será uma listagem de itens")
-            Text("Um dia isso será uma listagem de itens")
-            Text("Um dia isso será uma listagem de itens")
-            Text("Um dia isso será uma listagem de itens")
-            Text("Um dia isso será uma listagem de itens")
-            Text("Um dia isso será uma listagem de itens")
-            Text("Um dia isso será uma listagem de itens")
-            Text("Um dia isso será uma listagem de itens")
-            Text("Um dia isso será uma listagem de itens")
+        VStack {
+            Text(CurrentUserManager.currentUser.name)
+                .font(.largeTitle)
+            
+            List {
+                ForEach(CurrentUserManager.currentUser.borrowedItems) {item in
+                    VStack {
+                        Image(item.category.picture)
+                        Text(item.name)
+                    }
+                }
+            }
         }
+        
+
  
     }
 }
