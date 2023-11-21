@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+class CurrentUserManager {
+    static var currentUser: User = TestUsers.marcelle
+}

@@ -14,18 +14,16 @@ class User {
     var email: String
     var cpf: Int
     var phone: Int
-    var borrowedItems : [Item]
-    var lentItems: [Item]
+    @Relationship(deleteRule: .cascade) var borrowedItems = [Item]()
+//    var lentItems: [Item]
     
     
-    init(name: String, password: String, email: String, cpf: Int, phone: Int, borrowedItems: [Item] = [], lentItems: [Item] = []) {
+    init(name: String, password: String, email: String, cpf: Int, phone: Int) {
         self.name = name
         self.password = password
         self.email = email
         self.cpf = cpf
         self.phone = phone
-        self.borrowedItems = borrowedItems
-        self.lentItems = lentItems
     }
 }
 

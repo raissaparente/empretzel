@@ -7,9 +7,6 @@
 
 import SwiftData
 
-//test user
-let raissa = User(name: "Raissa", password: "123456", email: "raissa@email.com", cpf: 05223624351, phone: 85996120345)
-
 @Model
 class Item {
     var name: String
@@ -19,7 +16,7 @@ class Item {
     var lender: User
 //    var borrower: User?
     
-    init(name: String = "", category: Category = Category.other, details: String = "", state: Int = 0, lender: User = raissa) {
+    init(name: String = "", category: Category = Category.other, details: String = "", state: Int = 0, lender: User = CurrentUserManager.currentUser) {
         self.name = name
         self.category = category
         self.details = details
