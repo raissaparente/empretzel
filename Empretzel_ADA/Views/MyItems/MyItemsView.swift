@@ -9,6 +9,7 @@ import SwiftUI
 import SwiftData
 
 struct MyItemsView: View {
+    @Query var borrowedItems: [Item] = CurrentUserManager.currentUser.borrowedItems
     
     var body: some View {
         VStack {
@@ -16,7 +17,7 @@ struct MyItemsView: View {
                 .font(.largeTitle)
             
             List {
-                ForEach(CurrentUserManager.currentUser.borrowedItems) {item in
+                ForEach(borrowedItems) {item in
                     VStack {
                         Image(item.category.picture)
                         Text(item.name)
@@ -26,6 +27,5 @@ struct MyItemsView: View {
         }
         
 
- 
     }
 }
