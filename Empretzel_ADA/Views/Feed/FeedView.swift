@@ -23,7 +23,6 @@ struct FeedView: View {
         _items = Query(filter: predicate)
     }
     
-   
     
     var body: some View {
         ForEach(items) { item in
@@ -37,7 +36,7 @@ struct FeedView: View {
             .listRowBackground(Color.clear)
             .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
         }
-        .onDelete(perform: deleteItem) //n ta funcionando agr por causa do botao
+        .onDelete(perform: deleteItem)
         .sheet(item: $selectedItem) { item in
             ItemView(item: item, displayRequestView: $displayRequestView)
         }

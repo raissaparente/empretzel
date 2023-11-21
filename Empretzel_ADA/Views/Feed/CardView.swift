@@ -14,52 +14,52 @@ struct CardView: View {
     var itemName: String
     var itemDetails: String
     var itemImage: String
-    var maxCharacter: Int = 30
+    
+    
+//    RoundedRectangle(cornerRadius: 20, style: .continuous)
+//        .fill(.white)
+//        .frame(maxWidth: .infinity, maxHeight: 125)
     
     var body: some View {
-        
-        VStack {
-            VStack{
-                ZStack {
-                    RoundedRectangle(cornerRadius: 20, style: .continuous)
-                        .fill(.white)
-                        .frame(maxWidth: .infinity, maxHeight: 125)
-                    
-                    HStack{
-                        
-                        Image(itemImage)
-                            .resizable()
-                            .frame(width: 120, height: 100)
-                            .padding()
-                            .clipShape(RoundedRectangle(cornerRadius: 20))
-                            
-                       
-                        VStack(alignment: .leading){
-                            HStack {
-                                MakeCapsuleTag(text: categoryName.uppercased(), textColor: categoryColor, borderColor: categoryColor)
-                                Spacer()
-                            }
-
-                            
-                            Text(itemName)
-                                .font(.title2.bold())
-                            Text(
-                                String(itemDetails.prefix(maxCharacter)) + (itemDetails.count > maxCharacter ? "..." : "")
-                            )
-                                
-                                                        
-                        }
-                        .padding()
-                    }
-                    .padding(.horizontal, 16)
-                    .padding(.vertical, 5)
+        HStack(alignment: .top) {
+            
+            Image(itemImage)
+                .resizable()
+                .clipShape(RoundedRectangle(cornerRadius: 20))
+                .frame(width: 135, height: 115)
+                
+               
+                
+            VStack(alignment: .leading){
+                HStack {
+                    MakeCapsuleTag(text: categoryName.uppercased(), textColor: categoryColor, borderColor: categoryColor)
+                    Spacer()
                 }
-                .padding(.horizontal, 16)
+            
+
+                
+                Text(itemName)
+                    .font(.system(size: 18).bold())
+                Text(itemDetails)
+                    .lineLimit(/*@START_MENU_TOKEN@*/2/*@END_MENU_TOKEN@*/)
+                                            
             }
         }
+        .padding(8)
+        .background {
+            RoundedRectangle(cornerRadius: 20, style: .continuous)
+                .fill(Color(uiColor: .secondarySystemGroupedBackground))
+        }
+        .padding(.horizontal)
+        .padding(.vertical, 5)
     }
 }
-
-
+//
+//    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
     
+#Preview(traits: .sizeThatFitsLayout) {
+    CardView(categoryName: "LIVRO", categoryColor: .purple, itemName: "Chav de fenda", itemDetails: "Livro super interessante sobre formação de hábitos", itemImage: "clothespic")
+        .background(.black)
+}
+
 
