@@ -17,46 +17,43 @@ struct PictureUploadView: View {
     
     var body: some View {
         NavigationStack {
-            ZStack {
-                Color.lightgray
-                    .ignoresSafeArea()
+            
+            VStack (spacing: 30) {
+                Image("pictureicon")
+                    .resizable()
+                    .frame(width: 100, height: 100)
                 
-                VStack (spacing: 30) {
-                    Image("pictureicon")
-                        .resizable()
-                        .frame(width: 100, height: 100)
-                    
-                    Text("Selecione uma foto")
-                        .font(.largeTitle)
-                        .bold()
-                    
-                    Spacer()
-                    
-                    Image(systemName: "camera")
-                        .font(.system(size: 40))
-                        .foregroundStyle(.white)
-                        .frame(width: 300, height: 300)
-                        .background(.gray.opacity(0.5))
-                        .clipShape(RoundedRectangle(cornerRadius: 15))
-                    
-                    Spacer()
-                    
-                    Button {
-                        addItem(item: item)
-                        isNavigationActive = true
-                    } label: {
-                        Text("Publicar")
-                            .padding(0)
-                            .font(.title2)
-                            .frame(width: 280, height: 40)
-                    }
-                    .buttonStyle(.borderedProminent)
-                    
+                Text("Selecione uma foto")
+                    .font(.largeTitle)
+                    .bold()
+                
+                Spacer()
+                
+                Image(systemName: "camera")
+                    .font(.system(size: 40))
+                    .foregroundStyle(.white)
+                    .frame(width: 300, height: 300)
+                    .background(.gray.opacity(0.5))
+                    .clipShape(RoundedRectangle(cornerRadius: 15))
+                
+                Spacer()
+                
+                Button {
+                    addItem(item: item)
+                    isNavigationActive = true
+                } label: {
+                    Text("Publicar")
+                        .padding(0)
+                        .font(.title2)
+                        .frame(width: 280, height: 40)
                 }
-                .padding(30)
-                .navigationTitle("Imagem")
-                .navigationBarTitleDisplayMode(.inline)
+                .buttonStyle(.borderedProminent)
+                
             }
+            .padding(30)
+            .navigationTitle("Imagem")
+            .navigationBarTitleDisplayMode(.inline)
+            .background(Color(uiColor: .systemGroupedBackground))
             .navigationDestination(isPresented: $isNavigationActive) {
                 ConfirmationUploadView(displayUploadItemView: $displayUploadItemView)
             }
