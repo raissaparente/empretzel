@@ -21,53 +21,59 @@ struct CategoryUploadView: View {
     var body: some View {
         NavigationStack {
             
-            Image("categoryicon")
-                .resizable()
-                .frame(width: 100, height: 100)
-            
-            Text("Escolha a categoria")
-                .font(.largeTitle)
-                .bold()
-            
-            Spacer()
-            
-            LazyVGrid(columns: columns) {
-                ForEach(Category.allCases, id: \.self) { category in
-                    Button {
-                        item.category = category
-                        categoryClicked = category
-                    } label: {
-                        VStack {
-                            Image(category.icon)
-                                .resizable()
-                                .frame(width: 70, height: 70)
-                                .padding(10)
-                                .overlay {
-                                    if categoryClicked != category {
-                                        RoundedRectangle(cornerRadius: 5)
-                                            .stroke(.accent, lineWidth: 1)
-                                            .fill(.white.opacity(0.4))
-                                    } else {
-                                        RoundedRectangle(cornerRadius: 5)
-                                            .stroke(.accent, lineWidth: 2)
+            VStack {
+                Image("categoryicon")
+                    .resizable()
+                    .frame(width: 100, height: 100)
+                
+                Text("Escolha a categoria")
+                    .font(.largeTitle)
+                    .bold()
+                
+                Spacer()
+                
+                LazyVGrid(columns: columns) {
+                    ForEach(Category.allCases, id: \.self) { category in
+                        Button {
+                            item.category = category
+                            categoryClicked = category
+                        } label: {
+                            VStack {
+                                Image(category.icon)
+                                    .resizable()
+                                    .frame(width: 90, height: 90)
+                                    .overlay {
+                                        if categoryClicked != category {
+                                            Circle()
+                                                .fill(.white.opacity(0.5))
+                                        }
                                     }
-                                }
-                            
-                            Text(category.name)
+
+
+                                
+                                Text(category.name)
+                                    .font(.system(size: 16))
+                                    .foregroundStyle(.darkgray)
+                                    .lineLimit(1)
+
+                            }
+                            .padding(.top)
                         }
                     }
                 }
-            }
-            .padding(30)
-            
-            Spacer()
-            
-            NavigationLink(destination: NameUploadView(item: item, displayUploadItemView: $displayUploadItemView)) {
-                MakeButtonLink(text: "Próximo")
+                .padding(20)
+                
+                Spacer()
+                
+                NavigationLink(destination: NameUploadView(item: item, displayUploadItemView: $displayUploadItemView)) {
+                    MakeButtonLink(text: "Próximo")
+                }
+                .disabled(categoryClicked == nil)
             }
             .navigationTitle("Categoria")
             .navigationBarTitleDisplayMode(.inline)
-            .disabled(categoryClicked == nil)
+            .background(Color(uiColor: .systemGroupedBackground))
+
         }
     }
 }
