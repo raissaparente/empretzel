@@ -36,7 +36,7 @@ enum Category: String, Codable, CaseIterable {
     var name: String {
        switch self {
        case .clothes:
-           return "Roupa"
+           return "Vestimentas"
        case .books:
            return "Livro"
        case .tools:
@@ -44,7 +44,7 @@ enum Category: String, Codable, CaseIterable {
        case .tech:
            return "Tecnologia"
        case .entertainment:
-           return "Entretenimento"
+           return "Lazer"
        case .other:
            return "Outro"
        }

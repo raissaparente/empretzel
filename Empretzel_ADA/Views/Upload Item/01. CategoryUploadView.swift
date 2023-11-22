@@ -52,7 +52,7 @@ struct CategoryUploadView: View {
 
                                 
                                 Text(category.name)
-                                    .font(.system(size: 16))
+                                    .font(.system(size: 18))
                                     .foregroundStyle(.darkgray)
                                     .lineLimit(1)
 
