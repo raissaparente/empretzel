@@ -6,6 +6,7 @@
 //
 
 import SwiftData
+import Foundation
 
 @Model
 class Item {
@@ -13,15 +14,14 @@ class Item {
     var category: Category
     var details: String
     var state: Int
-    var lender: User
-//    var borrower: User?
+    var lender: Int?
+    var borrower: Int?
     
-    init(name: String = "", category: Category = Category.other, details: String = "", state: Int = 0, lender: User = CurrentUserManager.currentUser) {
+    init(name: String = "", category: Category = Category.other, details: String = "", state: Int = 0) {
         self.name = name
         self.category = category
         self.details = details
         self.state = state
-        self.lender = lender
     }
 }
 

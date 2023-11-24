@@ -27,16 +27,12 @@ struct CardView: View {
                 .resizable()
                 .clipShape(RoundedRectangle(cornerRadius: 20))
                 .frame(width: 135, height: 115)
-                
-               
-                
+                    
             VStack(alignment: .leading){
                 HStack {
                     MakeCapsuleTag(text: categoryName.uppercased(), textColor: categoryColor, borderColor: categoryColor)
                     Spacer()
                 }
-            
-
                 
                 Text(itemName)
                     .font(.system(size: 18).bold())
@@ -54,8 +50,7 @@ struct CardView: View {
         .padding(.vertical, 5)
     }
 }
-//
-//    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+
     
 #Preview(traits: .sizeThatFitsLayout) {
     CardView(categoryName: "LIVRO", categoryColor: .purple, itemName: "Chav de fenda", itemDetails: "Livro super interessante sobre formação de hábitos", itemImage: "clothespic")

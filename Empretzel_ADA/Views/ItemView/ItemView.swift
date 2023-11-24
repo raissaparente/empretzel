@@ -6,11 +6,16 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct ItemView: View {
     let item: Item
     @Binding var displayRequestView: Bool
     @State var isNavigationActive = false
+    
+    @Query(filter: #Predicate<User> { user in
+        user.id == 1
+    }) var users: [User]
     
     var body: some View {
         
@@ -31,7 +36,7 @@ struct ItemView: View {
                             .bold()
                             .foregroundStyle(.accent)
                         
-                        MakeCapsuleTag(text: "Dono: \(item.lender.name)", textColor: item.category.color, borderColor: item.category.color)
+                        MakeCapsuleTag(text: "Dono: \(users.first!.name)", textColor: item.category.color, borderColor: item.category.color)
                         
                         //Descricao
                         VStack {
@@ -64,7 +69,7 @@ struct ItemView: View {
                     
                     Button {
                         isNavigationActive = true
-                        CurrentUserManager.currentUser.borrowedItems.append(item)
+                        item.borrower = CurrentUserManager.currentUser.id
                     } label: {
                         Text("Quero")
                             .font(.title2)

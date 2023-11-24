@@ -6,24 +6,24 @@
 //
 
 import SwiftData
+import Foundation
 
 @Model
 class User {
+    var id: Int
     var name: String
     var password: String
     var email: String
     var cpf: Int
-    var phone: Int
-    @Relationship(deleteRule: .cascade) var borrowedItems = [Item]()
-//    var lentItems: [Item]
+    var phone: Int    
     
-    
-    init(name: String, password: String, email: String, cpf: Int, phone: Int) {
+    init(id: Int = 1, name: String, password: String, email: String, cpf: Int, phone: Int) {
         self.name = name
         self.password = password
         self.email = email
         self.cpf = cpf
         self.phone = phone
+        self.id = id
     }
 }
 

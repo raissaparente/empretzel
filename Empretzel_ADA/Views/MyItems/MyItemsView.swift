@@ -9,23 +9,63 @@ import SwiftUI
 import SwiftData
 
 struct MyItemsView: View {
-    @Query var borrowedItems: [Item] = CurrentUserManager.currentUser.borrowedItems
+    @Environment(\.modelContext) var context
+    @State var items: [Item] = []
     
     var body: some View {
-        VStack {
-            Text(CurrentUserManager.currentUser.name)
-                .font(.largeTitle)
-            
-            List {
-                ForEach(borrowedItems) {item in
-                    VStack {
-                        Image(item.category.picture)
-                        Text(item.name)
+        
+        NavigationStack {
+            VStack {
+  
+                VStack {
+                    Text("Pedi emprestado")
+                    ScrollView (.horizontal, showsIndicators: false){
+                        HStack {
+                            ForEach(items) {item in
+                                MyItemCardView(item: item)
+                            }
+                        }
                     }
                 }
+                .padding()
+                .frame(width: 400, height: 250)
+                .background {
+                    RoundedRectangle(cornerRadius: 20, style: .continuous)
+                        .fill(Color(uiColor: .secondarySystemGroupedBackground))
+                }
+                
+//                VStack {
+//                    Text("Estou emprestando")
+//                    ScrollView (.horizontal, showsIndicators: false){
+//                        HStack {
+//                            ForEach(lentItems) {item in
+//                                MyItemCardView(item: item)
+//                            }
+//                        }
+//                    }
+//                }
+//                .padding()
+//                .frame(width: 400, height: 250)
+//                .background {
+//                    RoundedRectangle(cornerRadius: 20, style: .continuous)
+//                        .fill(Color(uiColor: .secondarySystemGroupedBackground))
+//                }
+                
+                Spacer()
+                
+                
+            }
+            .padding()
+            .navigationTitle("Meus Itens")
+            .background(Color(uiColor: .systemGroupedBackground))
+            .onAppear {
+                let id = CurrentUserManager.currentUser.id
+                let fetchDescriptor = FetchDescriptor<Item>(
+                        predicate: #Predicate {
+                            $0.borrower == id
+                    })
+                items = try! context.fetch(fetchDescriptor)
             }
         }
-        
-
     }
 }

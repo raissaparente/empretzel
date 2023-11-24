@@ -10,6 +10,7 @@ import SwiftData
 
 struct HomeView: View {
     @Query var items: [Item]
+    @Environment(\.modelContext) var context
     
     @State var displayUploadItemView: Bool = false
     @State var searchText = ""
@@ -43,12 +44,15 @@ struct HomeView: View {
             .searchable(text: $searchText, prompt: "Qual item está procurando?")
   
 
-                //modal de publicar item
-                .sheet(isPresented: $displayUploadItemView) {
-                    CategoryUploadView(displayUploadItemView: $displayUploadItemView)
-                }
+            //modal de publicar item
+            .sheet(isPresented: $displayUploadItemView) {
+                CategoryUploadView(displayUploadItemView: $displayUploadItemView)
+            }
             
 
+        }
+        .onAppear {
+            context.insert(CurrentUserManager.currentUser)
         }
     }
 }

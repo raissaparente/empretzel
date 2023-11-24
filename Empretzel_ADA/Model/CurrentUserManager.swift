@@ -8,5 +8,5 @@
 import Foundation
 
 class CurrentUserManager {
-    static var currentUser: User = TestUsers.marcelle
+    static var currentUser: User = TestUsers.raissa
 }

@@ -40,6 +40,7 @@ struct PictureUploadView: View {
                 
                 Button {
                     addItem(item: item)
+                    item.lender = CurrentUserManager.currentUser.id
                     isNavigationActive = true
                 } label: {
                     Text("Publicar")
