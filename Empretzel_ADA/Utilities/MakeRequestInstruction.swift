@@ -17,11 +17,10 @@ struct MakeRequestInstruction: View {
                 .font(.system(size: 12))
                 .bold()
                 .padding(5)
-                .foregroundStyle(.white)
+                .foregroundStyle(Color(uiColor: .secondarySystemGroupedBackground))
                 .background(Circle().fill(.accent))
             Text(text)
-                .font(.system(size: 15))
-                .italic()
+                .font(.system(size: 16))
         }
     }
 }

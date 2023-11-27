@@ -21,20 +21,16 @@ struct ItemView: View {
         
         NavigationStack {
             
-            ZStack {
-                Color.lightgray
-                    .ignoresSafeArea()
 
-                VStack {
+                VStack(spacing: 20) {
                     
-                    VStack (spacing: 20) {
+                    VStack(spacing: 20) {
                         Image(item.category.picture)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                         Text(item.name)
-                            .font(.title3)
+                            .font(.title2)
                             .bold()
-                            .foregroundStyle(.accent)
                         
                         MakeCapsuleTag(text: "Dono: \(users.first!.name)", textColor: item.category.color, borderColor: item.category.color)
                         
@@ -44,7 +40,7 @@ struct ItemView: View {
                         }
                         .padding()
                         .frame(maxWidth: .infinity, minHeight: 100, alignment: .topLeading)
-                        .background(.lightgray)
+                        .background(Color(uiColor: .systemGroupedBackground))
                         .clipShape(RoundedRectangle(cornerRadius: 20))
                         
                         //Tags
@@ -62,7 +58,7 @@ struct ItemView: View {
                         .padding(.vertical, 20)
                     }
                     .padding()
-                    .background(.white)
+                    .background(Color(uiColor: .secondarySystemGroupedBackground))
                     .clipShape(RoundedRectangle(cornerRadius: 20))
                     
                     Spacer()
@@ -73,7 +69,7 @@ struct ItemView: View {
                     } label: {
                         Text("Quero")
                             .font(.title2)
-                            .frame(maxWidth: .infinity, minHeight: 60)
+                            .frame(maxWidth: .infinity, minHeight: 50)
                     }
                     .buttonStyle(.borderedProminent)
 
@@ -82,10 +78,11 @@ struct ItemView: View {
                 .padding()
                 .navigationTitle("Item")
                 .navigationBarTitleDisplayMode(.inline)
+                .background(Color(uiColor: .systemGroupedBackground))
                 .navigationDestination(isPresented: $isNavigationActive) {
                     ItemConfirmationView(item: item, displayRequestView: $displayRequestView)
                 }
-            }
+            
         }
     }
     

@@ -37,7 +37,7 @@ struct HomeView: View {
                     displayUploadItemView = true
                 } label: {
                     Image(systemName: "plus.circle.fill")
-                        .foregroundStyle(.eggplantpurple)
+                        .foregroundStyle(.accent)
                         .font(.system(size: 30))
                 }
             }

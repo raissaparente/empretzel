@@ -61,6 +61,7 @@ struct MyItemsView: View {
             .background(Color(uiColor: .systemGroupedBackground))
             .onAppear {
                 let id = CurrentUserManager.currentUser.id
+                
                 let borrowFetchDescriptor = FetchDescriptor<Item>(
                         predicate: #Predicate {
                             $0.borrower == id
@@ -69,6 +70,7 @@ struct MyItemsView: View {
                         predicate: #Predicate {
                             $0.lender == id
                     })
+                
                 borrowedItems = try! context.fetch(borrowFetchDescriptor)
                 lentItems = try! context.fetch(lendFetchDescriptor)
             }
