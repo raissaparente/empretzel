@@ -14,8 +14,11 @@ class Item {
     var category: Category
     var details: String
     var state: Int
+    
     var lender: Int?
+    var borrowRequests: [Int] = []
     var borrower: Int?
+    var isAccepted: Bool = false
     
     init(name: String = "", category: Category = Category.other, details: String = "", state: Int = 0) {
         self.name = name
