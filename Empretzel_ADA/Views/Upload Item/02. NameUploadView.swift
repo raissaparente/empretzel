@@ -9,6 +9,7 @@ import SwiftUI
 import SwiftData
 
 struct NameUploadView: View {
+    
     @Bindable var item: Item
     @Binding var displayUploadItemView: Bool
     
@@ -80,7 +81,11 @@ struct NameUploadView: View {
             .navigationTitle("Descrição")
             .navigationBarTitleDisplayMode(.inline)
             .background(Color(uiColor: .systemGroupedBackground))
-            
+            .toolbar {
+                Button("Fechar") {
+                    displayUploadItemView = false
+                }
+            }
         }
     }
 }

@@ -12,7 +12,8 @@ struct CategoryUploadView: View {
     
     @Bindable var item = Item()
     @Binding var displayUploadItemView: Bool
-    @State var categoryClicked: Category?
+    @State var categoryClicked:  Category?
+    
     
     let columns = [
         GridItem(.adaptive(minimum: 100))
@@ -48,13 +49,10 @@ struct CategoryUploadView: View {
                                                 .fill(.white.opacity(0.5))
                                         }
                                     }
-
-
-                                
+                           
                                 Text(category.name)
                                     .font(.system(size: 18))
                                     .lineLimit(1)
-
                             }
                             .padding(.top)
                         }
@@ -72,6 +70,11 @@ struct CategoryUploadView: View {
             .navigationTitle("Categoria")
             .navigationBarTitleDisplayMode(.inline)
             .background(Color(uiColor: .systemGroupedBackground))
+            .toolbar {
+                Button("Fechar") {
+                    displayUploadItemView = false
+                }
+            }
 
         }
     }

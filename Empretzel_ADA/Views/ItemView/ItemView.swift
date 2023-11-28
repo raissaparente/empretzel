@@ -18,10 +18,8 @@ struct ItemView: View {
     }) var users: [User]
     
     var body: some View {
-        
         NavigationStack {
             
-
                 VStack(spacing: 20) {
                     
                     VStack(spacing: 20) {
@@ -82,7 +80,11 @@ struct ItemView: View {
                 .navigationDestination(isPresented: $isNavigationActive) {
                     ItemConfirmationView(item: item, displayRequestView: $displayRequestView)
                 }
-            
+                .toolbar {
+                    Button("Fechar") {
+                        displayRequestView = false
+                    }
+                }
         }
     }
     
@@ -96,9 +98,3 @@ struct ItemView: View {
         }
     }
 }
-
-
-
-
-
-
