@@ -42,6 +42,15 @@ struct HomeView: View {
                 }
             }
             .searchable(text: $searchText, prompt: "Qual item está procurando?")
+            .overlay {
+                if items.isEmpty {
+                    ContentUnavailableView{
+                        Label("Por enquanto não há itens.", systemImage: "square.stack.3d.up.slash.fill")
+                    } description: {
+                        Text("Tente adicionar um item ou procurar um amigo.")
+                    } 
+                }
+            }
   
 
             //modal de publicar item

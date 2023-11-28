@@ -46,7 +46,6 @@ struct FeedView: View {
             }
         }
     }
-        //Testar tabbar aqui
     
     func deleteItem(_ indexSet: IndexSet) {
         for index in indexSet {
