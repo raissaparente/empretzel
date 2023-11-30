@@ -16,44 +16,13 @@ struct MyItemsView: View {
     var body: some View {
         
         NavigationStack {
-            VStack {
+            VStack (spacing: 35) {
   
-                VStack {
-                    Text("Pedi emprestado")
-                    ScrollView (.horizontal, showsIndicators: false){
-                        HStack {
-                            ForEach(borrowedItems) {item in
-                                MyItemCardView(item: item)
-                            }
-                        }
-                    }
-                }
-                .padding()
-                .frame(width: 400, height: 250)
-                .background {
-                    RoundedRectangle(cornerRadius: 20, style: .continuous)
-                        .fill(Color(uiColor: .secondarySystemGroupedBackground))
-                }
+                MyItemsSectionView(title: "Pedi Emprestado", itemArray: borrowedItems, trueConditionColor: .acceptedgreen, falseConditionColor: .waitingpurple)
                 
-                VStack {
-                    Text("Estou emprestando")
-                    ScrollView (.horizontal, showsIndicators: false){
-                        HStack {
-                            ForEach(lentItems) {item in
-                                MyItemCardView(item: item)
-                            }
-                        }
-                    }
-                }
-                .padding()
-                .frame(width: 400, height: 250)
-                .background {
-                    RoundedRectangle(cornerRadius: 20, style: .continuous)
-                        .fill(Color(uiColor: .secondarySystemGroupedBackground))
-                }
+                MyItemsSectionView(title: "Estou emprestando", itemArray: lentItems, trueConditionColor: .accent, falseConditionColor: .clear)
                 
                 Spacer()
-                
                 
             }
             .padding()
