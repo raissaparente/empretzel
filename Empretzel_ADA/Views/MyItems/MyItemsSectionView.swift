@@ -51,12 +51,12 @@ struct MyItemsSectionView: View {
                     }
                 }
             }
-            .padding()
-            .frame(maxWidth: .infinity, minHeight: 250)
-            .background {
-                RoundedRectangle(cornerRadius: 20, style: .continuous)
-                    .fill(Color(uiColor: .secondarySystemGroupedBackground))
-            }
+        }
+        .padding()
+        .frame(maxWidth: .infinity, minHeight: 250)
+        .background {
+            RoundedRectangle(cornerRadius: 20, style: .continuous)
+                .fill(Color(uiColor: .secondarySystemGroupedBackground))
         }
     }
 }

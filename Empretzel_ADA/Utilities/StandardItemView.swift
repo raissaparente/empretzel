@@ -10,6 +10,7 @@ import SwiftData
 
 struct StandardItemView: View {
     var item: Item
+    var showOwner = true
     
     @Query(filter: #Predicate<User> { user in
         user.id == 1
@@ -26,7 +27,9 @@ struct StandardItemView: View {
                 .font(.title2)
                 .bold()
             
-            MakeCapsuleTag(text: "Dono: \(users.first!.name)", textColor: item.category.color, borderColor: item.category.color)
+            if showOwner {
+                MakeCapsuleTag(text: "Dono: \(users.first!.name)", textColor: item.category.color, borderColor: item.category.color)
+            }
             
             //Descricao
             VStack {

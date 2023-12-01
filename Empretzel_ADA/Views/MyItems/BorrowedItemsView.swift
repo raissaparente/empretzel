@@ -23,8 +23,7 @@ struct BorrowedItemsView: View {
                     HStack {
                         Text("Aguardando confirmação".uppercased())
                             .foregroundStyle(.waitingpurple)
-                            .font(.system(size: 20, weight: .semibold))
-                        
+                            .font(.system(size: 18, weight: .semibold))
                             .padding()
                             .background {
                                 RoundedRectangle(cornerRadius: 16)
@@ -32,6 +31,8 @@ struct BorrowedItemsView: View {
                                     .background(RoundedRectangle(cornerRadius: 16).fill(.waitingpurple.opacity(0.5)))
                             }
                     }
+                    
+                    Spacer()
                     
                 }
                 .padding()

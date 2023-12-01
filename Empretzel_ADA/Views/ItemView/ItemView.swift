@@ -22,6 +22,7 @@ struct ItemView: View {
         NavigationStack {
             
             VStack {
+                
                 VStack(spacing: 20) {
                     
                     StandardItemView(item: item)
@@ -50,14 +51,15 @@ struct ItemView: View {
                 
                 Spacer()
             }
+            .padding()
+            .navigationTitle("Item")
+            .navigationBarTitleDisplayMode(.inline)
+            .background(Color(uiColor: .systemGroupedBackground))
+            .navigationDestination(isPresented: $isNavigationActive) {
+                ItemConfirmationView(item: item, displayRequestView: $displayRequestView)
+            }
         }
-        .padding()
-        .navigationTitle("Item")
-        .navigationBarTitleDisplayMode(.inline)
-        .background(Color(uiColor: .systemGroupedBackground))
-        .navigationDestination(isPresented: $isNavigationActive) {
-            ItemConfirmationView(item: item, displayRequestView: $displayRequestView)
-        }
+        
     }
     
     func stateString(state: Int) -> String {

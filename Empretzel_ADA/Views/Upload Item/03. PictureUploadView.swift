@@ -44,7 +44,6 @@ struct PictureUploadView: View {
                     isNavigationActive = true
                 } label: {
                     Text("Publicar")
-                        .padding(0)
                         .font(.title2)
                         .frame(width: 280, height: 40)
                 }
