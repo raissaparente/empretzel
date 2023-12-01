@@ -14,6 +14,9 @@ struct MyItemsSectionView: View {
     var trueConditionColor: Color
     var falseConditionColor: Color
     
+    @State var selectedItem: Item?
+    var modalViewBorrow: Bool
+    
     
     var body: some View {
         VStack (alignment: .leading) {
@@ -25,8 +28,13 @@ struct MyItemsSectionView: View {
                     ForEach(itemArray) {item in
                         ZStack(alignment: .topLeading) {
                             
-                            MyItemCardView(item: item)
-                                .padding(.top, 5)
+                            Button {
+                                selectedItem = item
+                                print("foi")
+                            } label: {
+                                MyItemCardView(item: item)
+                                    .padding(.top, 5)
+                            }
                             
                             Image(systemName: "bookmark.fill")
                                 .font(.system(size: 32))
@@ -34,14 +42,21 @@ struct MyItemsSectionView: View {
                                 .padding(.leading, 10)
                         }
                     }
+                    .sheet(item: $selectedItem) { item in
+                        if modalViewBorrow {
+                            BorrowedItemsView(item: item)
+                        } else {
+                            LentItemsView(item: item)
+                        }
+                    }
                 }
             }
-        }
-        .padding()
-        .frame(maxWidth: .infinity, minHeight: 250)
-        .background {
-            RoundedRectangle(cornerRadius: 20, style: .continuous)
-                .fill(Color(uiColor: .secondarySystemGroupedBackground))
+            .padding()
+            .frame(maxWidth: .infinity, minHeight: 250)
+            .background {
+                RoundedRectangle(cornerRadius: 20, style: .continuous)
+                    .fill(Color(uiColor: .secondarySystemGroupedBackground))
+            }
         }
     }
 }

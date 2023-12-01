@@ -12,15 +12,17 @@ struct MyItemsView: View {
     @Environment(\.modelContext) var context
     @State var borrowedItems: [Item] = []
     @State var lentItems: [Item] = []
-    
+
     var body: some View {
         
         NavigationStack {
             VStack (spacing: 35) {
   
-                MyItemsSectionView(title: "Pedi Emprestado", itemArray: borrowedItems, trueConditionColor: .acceptedgreen, falseConditionColor: .waitingpurple)
+                Spacer()
                 
-                MyItemsSectionView(title: "Estou emprestando", itemArray: lentItems, trueConditionColor: .accent, falseConditionColor: .clear)
+                MyItemsSectionView(title: "Pedi Emprestado", itemArray: borrowedItems, trueConditionColor: .acceptedgreen, falseConditionColor: .waitingpurple, modalViewBorrow: true)
+                
+                MyItemsSectionView(title: "Estou emprestando", itemArray: lentItems, trueConditionColor: .accent, falseConditionColor: .clear, modalViewBorrow: false)
                 
                 Spacer()
                 
