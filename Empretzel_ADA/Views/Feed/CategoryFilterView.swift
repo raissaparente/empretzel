@@ -20,6 +20,7 @@ struct CategoryFilterView: View {
                 } label: {
                     Label("Todos", systemImage: "line.3.horizontal.decrease.circle.fill")
                 }
+                .foregroundStyle(.teste)
                 .buttonStyle(.borderedProminent)
             } else {
                 Button {
@@ -40,6 +41,7 @@ struct CategoryFilterView: View {
                     } label: {
                         Text(category.name)
                     }
+                    .foregroundStyle(.teste)
                     .buttonStyle(.borderedProminent)
                 } else {
                     Button {
