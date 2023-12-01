@@ -58,6 +58,11 @@ struct PictureUploadView: View {
             .navigationDestination(isPresented: $isNavigationActive) {
                 ConfirmationUploadView(displayUploadItemView: $displayUploadItemView)
             }
+            .toolbar {
+                Button("Fechar") {
+                    displayUploadItemView = false
+                }
+            }
         }
     }
     

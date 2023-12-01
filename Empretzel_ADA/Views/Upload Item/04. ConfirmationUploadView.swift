@@ -9,6 +9,7 @@ import SwiftUI
 import SwiftData
 
 struct ConfirmationUploadView: View {
+    @Environment(\.dismiss) var dismiss
     @Binding var displayUploadItemView: Bool
     
     var body: some View {
@@ -32,6 +33,10 @@ struct ConfirmationUploadView: View {
             Spacer()
         }
         .background(Color(uiColor: .systemGroupedBackground))
-        
+        .toolbar {
+            Button("Fechar") {
+               dismiss()
+            }
+        }
     }
 }

@@ -8,25 +8,50 @@
 import SwiftUI
 
 struct CategoryFilterView: View {
-    @State var searchText: String
+    @State var categoryPicked: Category?
+    @State var allPicked: Bool = true
     
     var body: some View {
         HStack {
-            Button {
-                searchText = ""
-            } label: {
-                Label("Todos", systemImage: "line.3.horizontal.decrease.circle.fill")
-            }
-            .buttonStyle(.borderedProminent)
-            
-            ForEach(Category.allCases, id: \.self) { category in
+            if allPicked == true {
                 Button {
-                    searchText = category.name
+                    allPicked = true
+                    categoryPicked = nil
                 } label: {
-                    Text(category.name)
+                    Label("Todos", systemImage: "line.3.horizontal.decrease.circle.fill")
+                }
+                .buttonStyle(.borderedProminent)
+            } else {
+                Button {
+                    allPicked = true
+                    categoryPicked = nil
+                } label: {
+                    Label("Todos", systemImage: "line.3.horizontal.decrease.circle.fill")
                 }
                 .buttonStyle(.bordered)
             }
+
+            
+            ForEach(Category.allCases, id: \.self) { category in
+                if categoryPicked == category {
+                    Button {
+                        allPicked = false
+                        categoryPicked = category
+                    } label: {
+                        Text(category.name)
+                    }
+                    .buttonStyle(.borderedProminent)
+                } else {
+                    Button {
+                        allPicked = false
+                        categoryPicked = category
+                    } label: {
+                        Text(category.name)
+                    }
+                    .buttonStyle(.bordered)
+                }
+            }
+            
         }
         .padding()
     }

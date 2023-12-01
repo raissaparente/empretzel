@@ -22,7 +22,7 @@ struct HomeView: View {
                     FeedView(filterText: searchText)
                 } header: {
                     ScrollView(.horizontal, showsIndicators: false) {
-                        CategoryFilterView(searchText: searchText)
+                        CategoryFilterView()
                     }
                     .headerProminence(.increased)
                     .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
@@ -51,13 +51,10 @@ struct HomeView: View {
                     } 
                 }
             }
-  
-
             //modal de publicar item
             .sheet(isPresented: $displayUploadItemView) {
                 CategoryUploadView(displayUploadItemView: $displayUploadItemView)
             }
-            
 
         }
         .onAppear {
