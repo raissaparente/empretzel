@@ -21,34 +21,35 @@ struct ItemView: View {
         
         NavigationStack {
             
-            VStack(spacing: 20) {
-                
-                StandardItemView(item: item)
-                
-                //Instrucoes de emprestimo
-                VStack (alignment: .leading, spacing: 0) {
-                    MakeRequestInstruction(number: "1", text: "Solicite o empréstimo")
-                    MakeRequestInstruction(number: "2", text: "Aguarde a confirmação da solicitação")
-                    MakeRequestInstruction(number: "3", text: "Entre em contato com o dono do item")
+            VStack {
+                VStack(spacing: 20) {
+                    
+                    StandardItemView(item: item)
+                    
+                    VStack (alignment: .leading, spacing: 0) {
+                        MakeRequestInstruction(number: "1", text: "Solicite o empréstimo")
+                        MakeRequestInstruction(number: "2", text: "Aguarde a confirmação da solicitação")
+                        MakeRequestInstruction(number: "3", text: "Entre em contato com o dono do item")
+                    }
                 }
+                .padding()
+                .background(Color(uiColor: .secondarySystemGroupedBackground))
+                .clipShape(RoundedRectangle(cornerRadius: 20))
+                
+                Spacer()
+                
+                Button {
+                    isNavigationActive = true
+                    item.borrower = CurrentUserManager.currentUser.id
+                } label: {
+                    Text("Quero")
+                        .font(.title2)
+                        .frame(maxWidth: .infinity, minHeight: 50)
+                }
+                .buttonStyle(.borderedProminent)
+                
+                Spacer()
             }
-            .padding()
-            .background(Color(uiColor: .secondarySystemGroupedBackground))
-            .clipShape(RoundedRectangle(cornerRadius: 20))
-            
-            Spacer()
-            
-            Button {
-                isNavigationActive = true
-                item.borrower = CurrentUserManager.currentUser.id
-            } label: {
-                Text("Quero")
-                    .font(.title2)
-                    .frame(maxWidth: .infinity, minHeight: 50)
-            }
-            .buttonStyle(.borderedProminent)
-            
-            Spacer()
         }
         .padding()
         .navigationTitle("Item")
@@ -59,7 +60,7 @@ struct ItemView: View {
         }
     }
     
-    func stateString(state: Int) -> String{
+    func stateString(state: Int) -> String {
         if state == 1 {
             return "Danificado"
         } else if state == 3 {
