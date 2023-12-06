@@ -6,6 +6,9 @@
 //
 
 import Foundation
+import SwiftUI
+
+
 
 class TestUsers {
     static var raissa = User(name: "Raissa", password: "123456", email: "raissa@email.com", cpf: 05223624351, phone: 85996120345)
@@ -16,3 +19,6 @@ class TestUsers {
     
     static var saulo = User(name: "Saulo", password: "123456", email: "saulo@email.com", cpf: 09812145470, phone: 85988987654)
 }
+
+
+

@@ -9,7 +9,7 @@ import SwiftData
 import Foundation
 
 @Model
-class User {
+class User: ObservableObject {
     var id: Int
     var name: String
     var password: String
