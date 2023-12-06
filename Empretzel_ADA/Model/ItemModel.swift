@@ -16,7 +16,7 @@ class Item {
     var state: Int
     
     var lender: Int?
-    var borrowRequests: [Int] = []
+//    var borrowRequests: [Int] = []
     var borrower: Int?
     var isAccepted: Bool = false
     

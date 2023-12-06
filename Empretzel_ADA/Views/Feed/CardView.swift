@@ -15,11 +15,6 @@ struct CardView: View {
     var itemDetails: String
     var itemImage: String
     
-    
-//    RoundedRectangle(cornerRadius: 20, style: .continuous)
-//        .fill(.white)
-//        .frame(maxWidth: .infinity, maxHeight: 125)
-    
     var body: some View {
         HStack(alignment: .top) {
             

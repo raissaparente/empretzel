@@ -19,11 +19,15 @@
 		B616FB8D2B06C63900B31F97 /* MakeCapsuleTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = B616FB8C2B06C63900B31F97 /* MakeCapsuleTag.swift */; };
 		B62D25AE2B07E3F7005E8165 /* ItemStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62D25AD2B07E3F7005E8165 /* ItemStateModel.swift */; };
 		B62D25B02B07FB39005E8165 /* TestUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62D25AF2B07FB39005E8165 /* TestUsers.swift */; };
+		B63C6BB72B1A4575002F120B /* LentItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63C6BB62B1A4575002F120B /* LentItemsView.swift */; };
 		B66223492AF82EDD008AA337 /* Empretzel_ADAApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66223482AF82EDD008AA337 /* Empretzel_ADAApp.swift */; };
 		B66223502AF82EE0008AA337 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B662234F2AF82EE0008AA337 /* Preview Assets.xcassets */; };
 		B66223572AF82EF4008AA337 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66223562AF82EF4008AA337 /* UserModel.swift */; };
 		B66223592AF82F00008AA337 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66223582AF82EFF008AA337 /* ItemModel.swift */; };
 		B662235B2AF82F12008AA337 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B662235A2AF82F12008AA337 /* HomeView.swift */; };
+		B68452272B18D09D00F880EF /* MyItemsSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68452262B18D09D00F880EF /* MyItemsSectionView.swift */; };
+		B68452292B18FB8F00F880EF /* BorrowedItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68452282B18FB8F00F880EF /* BorrowedItemsView.swift */; };
+		B684522B2B18FC0B00F880EF /* StandardItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B684522A2B18FC0B00F880EF /* StandardItemView.swift */; };
 		B68DCEB02AFD890000660B0F /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68DCEAF2AFD890000660B0F /* ItemView.swift */; };
 		B69D23FD2B0BDE6400C1B171 /* CurrentUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69D23FC2B0BDE6400C1B171 /* CurrentUserManager.swift */; };
 		B6A131792AF9542000F5B66E /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A131782AF9542000F5B66E /* CategoryModel.swift */; };
@@ -48,12 +52,16 @@
 		B616FB8C2B06C63900B31F97 /* MakeCapsuleTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeCapsuleTag.swift; sourceTree = "<group>"; };
 		B62D25AD2B07E3F7005E8165 /* ItemStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemStateModel.swift; sourceTree = "<group>"; };
 		B62D25AF2B07FB39005E8165 /* TestUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUsers.swift; sourceTree = "<group>"; };
+		B63C6BB62B1A4575002F120B /* LentItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LentItemsView.swift; sourceTree = "<group>"; };
 		B66223452AF82EDD008AA337 /* Empretzel_ADA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Empretzel_ADA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B66223482AF82EDD008AA337 /* Empretzel_ADAApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Empretzel_ADAApp.swift; sourceTree = "<group>"; };
 		B662234F2AF82EE0008AA337 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B66223562AF82EF4008AA337 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		B66223582AF82EFF008AA337 /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
 		B662235A2AF82F12008AA337 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		B68452262B18D09D00F880EF /* MyItemsSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyItemsSectionView.swift; sourceTree = "<group>"; };
+		B68452282B18FB8F00F880EF /* BorrowedItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorrowedItemsView.swift; sourceTree = "<group>"; };
+		B684522A2B18FC0B00F880EF /* StandardItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardItemView.swift; sourceTree = "<group>"; };
 		B68DCEAF2AFD890000660B0F /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
 		B69D23FC2B0BDE6400C1B171 /* CurrentUserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserManager.swift; sourceTree = "<group>"; };
 		B6A131782AF9542000F5B66E /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
@@ -82,6 +90,7 @@
 				B616FB852B06C58F00B31F97 /* MakeButtonLink.swift */,
 				B616FB8A2B06C61E00B31F97 /* MakeRequestInstruction.swift */,
 				B616FB8C2B06C63900B31F97 /* MakeCapsuleTag.swift */,
+				B684522A2B18FC0B00F880EF /* StandardItemView.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -129,6 +138,9 @@
 			isa = PBXGroup;
 			children = (
 				B6CE84B82B02B9C00061DB3F /* MyItemsView.swift */,
+				B68452282B18FB8F00F880EF /* BorrowedItemsView.swift */,
+				B63C6BB62B1A4575002F120B /* LentItemsView.swift */,
+				B68452262B18D09D00F880EF /* MyItemsSectionView.swift */,
 				B6ADB7612B0E5DE300BFBA9A /* MyItemCardView.swift */,
 			);
 			path = MyItems;
@@ -268,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B616FB8B2B06C61E00B31F97 /* MakeRequestInstruction.swift in Sources */,
+				B68452292B18FB8F00F880EF /* BorrowedItemsView.swift in Sources */,
 				B616FB7E2B06C4C500B31F97 /* 01. CategoryUploadView.swift in Sources */,
 				B616FB892B06C5FA00B31F97 /* RequestConfirmationView.swift in Sources */,
 				B6CE84B12B0284CC0061DB3F /* FeedView.swift in Sources */,
@@ -277,8 +290,10 @@
 				B6CE84B72B02B8FC0061DB3F /* MainView.swift in Sources */,
 				B6CE84BB2B02B9D30061DB3F /* ProfileView.swift in Sources */,
 				B6ADB7622B0E5DE300BFBA9A /* MyItemCardView.swift in Sources */,
+				B68452272B18D09D00F880EF /* MyItemsSectionView.swift in Sources */,
 				B6CE84B92B02B9C00061DB3F /* MyItemsView.swift in Sources */,
 				B6A131792AF9542000F5B66E /* CategoryModel.swift in Sources */,
+				B63C6BB72B1A4575002F120B /* LentItemsView.swift in Sources */,
 				B616FB862B06C58F00B31F97 /* MakeButtonLink.swift in Sources */,
 				B616FB802B06C4E400B31F97 /* 02. NameUploadView.swift in Sources */,
 				B616FB772B05325D00B31F97 /* CardView.swift in Sources */,
@@ -290,6 +305,7 @@
 				B68DCEB02AFD890000660B0F /* ItemView.swift in Sources */,
 				B616FB8D2B06C63900B31F97 /* MakeCapsuleTag.swift in Sources */,
 				B62D25B02B07FB39005E8165 /* TestUsers.swift in Sources */,
+				B684522B2B18FC0B00F880EF /* StandardItemView.swift in Sources */,
 				B66223592AF82F00008AA337 /* ItemModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
