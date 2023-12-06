@@ -18,8 +18,11 @@ struct MyItemsView: View {
         NavigationStack {
             VStack {
   
-                VStack {
+                VStack (alignment: .leading) {
                     Text("Pedi emprestado")
+                        .bold()
+                      
+                    Spacer()
                     ScrollView (.horizontal, showsIndicators: false){
                         HStack {
                             ForEach(borrowedItems) {item in
@@ -35,8 +38,10 @@ struct MyItemsView: View {
                         .fill(Color(uiColor: .secondarySystemGroupedBackground))
                 }
                 
-                VStack {
+                VStack (alignment: .leading) {
                     Text("Estou emprestando")
+                        .bold()
+                    Spacer()
                     ScrollView (.horizontal, showsIndicators: false){
                         HStack {
                             ForEach(lentItems) {item in
