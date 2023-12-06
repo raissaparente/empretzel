@@ -30,7 +30,6 @@ struct MyItemsSectionView: View {
                             
                             Button {
                                 selectedItem = item
-                                print("foi")
                             } label: {
                                 MyItemCardView(item: item)
                                     .padding(.top, 5)
