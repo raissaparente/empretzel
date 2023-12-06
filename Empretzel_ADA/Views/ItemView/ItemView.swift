@@ -13,9 +13,6 @@ struct ItemView: View {
     @Binding var displayRequestView: Bool
     @State var isNavigationActive = false
     
-    @Query(filter: #Predicate<User> { user in
-        user.id == 1
-    }) var users: [User]
     
     var body: some View {
         NavigationStack {
@@ -30,7 +27,7 @@ struct ItemView: View {
                             .font(.title2)
                             .bold()
                         
-                        MakeCapsuleTag(text: "Dono: \(users.first!.name)", textColor: item.category.color, borderColor: item.category.color)
+                        MakeCapsuleTag(text: "Dono: \(item.lender?.name ?? "owner")", textColor: item.category.color, borderColor: item.category.color)
                         
                         //Descricao
                         VStack {
@@ -63,7 +60,7 @@ struct ItemView: View {
                     
                     Button {
                         isNavigationActive = true
-                        item.borrower = CurrentUserManager.currentUser.id
+                        item.borrower = CurrentUserManager.currentUser
                     } label: {
                         Text("Quero")
                             .font(.title2)

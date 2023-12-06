@@ -31,15 +31,16 @@ struct MyItemsView: View {
             .navigationTitle("Meus Itens")
             .background(Color(uiColor: .systemGroupedBackground))
             .onAppear {
-                let id = CurrentUserManager.currentUser.id
+                let user = CurrentUserManager.currentUser.id
                 
                 let borrowFetchDescriptor = FetchDescriptor<Item>(
                         predicate: #Predicate {
-                            $0.borrower == id
+                            $0.borrower?.id == user
                     })
+                
                 let lendFetchDescriptor = FetchDescriptor<Item>(
                         predicate: #Predicate {
-                            $0.lender == id
+                            $0.lender?.id == user
                     })
                 
                 borrowedItems = try! context.fetch(borrowFetchDescriptor)

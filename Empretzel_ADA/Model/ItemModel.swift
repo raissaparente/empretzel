@@ -15,9 +15,9 @@ class Item {
     var details: String
     var state: Int
     
-    var lender: Int?
+    var lender: User?
 //    var borrowRequests: [Int] = []
-    var borrower: Int?
+    var borrower: User?
     var isAccepted: Bool = false
     
     init(name: String = "", category: Category = Category.other, details: String = "", state: Int = 0) {

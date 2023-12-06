@@ -12,10 +12,6 @@ struct StandardItemView: View {
     var item: Item
     var showOwner = true
     
-    @Query(filter: #Predicate<User> { user in
-        user.id == 1
-    }) var users: [User]
-    
     var body: some View {
         VStack {
             Image(item.category.picture)
@@ -28,7 +24,7 @@ struct StandardItemView: View {
                 .bold()
             
             if showOwner {
-                MakeCapsuleTag(text: "Dono: \(users.first!.name)", textColor: item.category.color, borderColor: item.category.color)
+                MakeCapsuleTag(text: "Dono: \(item.lender?.name ?? "lender")", textColor: item.category.color, borderColor: item.category.color)
             }
             
             //Descricao
