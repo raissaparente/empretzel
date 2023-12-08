@@ -32,6 +32,7 @@ struct MyItemsSectionView: View {
                 Spacer()
                 
                 Text(emptyArrayText)
+                    .foregroundStyle(.darkgray)
                 
                 Spacer()
                 

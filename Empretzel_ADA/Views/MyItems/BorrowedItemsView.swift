@@ -6,10 +6,15 @@
 //
 
 import SwiftUI
+import SwiftData
+
 
 struct BorrowedItemsView: View {
     var item: Item
     
+    @Query(filter: #Predicate<User> { user in
+        user.isLoggedin == true
+    }) var loggedUser: [User]
     
     var body: some View {
         NavigationStack {
@@ -20,17 +25,39 @@ struct BorrowedItemsView: View {
                     
                     Spacer()
                     
-                    HStack {
-                        Text("Aguardando confirmação".uppercased())
-                            .foregroundStyle(.waitingpurple)
-                            .font(.system(size: 18, weight: .semibold))
-                            .padding()
-                            .background {
-                                RoundedRectangle(cornerRadius: 16)
-                                    .strokeBorder(.waitingpurple, lineWidth: 0.8)
-                                    .background(RoundedRectangle(cornerRadius: 16).fill(.waitingpurple.opacity(0.5)))
+                    if loggedUser.first == item.borrower {
+                        HStack {
+                            Text("Pedido aceito".uppercased())
+                                .foregroundStyle(.acceptedgreen)
+                                .font(.system(size: 18, weight: .semibold))
+                                .padding()
+                                .background {
+                                    RoundedRectangle(cornerRadius: 16)
+                                        .strokeBorder(.acceptedgreen, lineWidth: 0.8)
+                                        .background(RoundedRectangle(cornerRadius: 16).fill(.acceptedgreen.opacity(0.5)))
+                                }
+                            HStack {
+                                Image("phone.circle.fill")
+                                    .foregroundStyle(.green)
+                                Text("\(item.lender!.phone)")
+
                             }
+                        }
+                    } else {
+                        HStack {
+                            Text("Aguardando confirmação".uppercased())
+                                .foregroundStyle(.waitingpurple)
+                                .font(.system(size: 18, weight: .semibold))
+                                .padding()
+                                .background {
+                                    RoundedRectangle(cornerRadius: 16)
+                                        .strokeBorder(.waitingpurple, lineWidth: 0.8)
+                                        .background(RoundedRectangle(cornerRadius: 16).fill(.waitingpurple.opacity(0.5)))
+                                }
+                        }
                     }
+                    
+
                     
                     Spacer()
                     

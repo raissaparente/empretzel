@@ -26,10 +26,10 @@ struct MyItemsView: View {
                 Spacer()
                 
 
-                MyItemsSectionView(title: "Pedi Emprestado", itemArray: borrowedItems, trueConditionColor: .acceptedgreen, falseConditionColor: .waitingpurple, emptyArrayText: "Você ainda não fez nenhum pedido.", modalViewBorrow: true)
+                MyItemsSectionView(title: "Pedi emprestado", itemArray: borrowedItems, trueConditionColor: .acceptedgreen, falseConditionColor: .waitingpurple, emptyArrayText: "Você ainda não fez nenhum pedido.", modalViewBorrow: true)
                 
 
-                MyItemsSectionView(title: "Estou emprestando", itemArray: lentItems, trueConditionColor: .accent, falseConditionColor: .clear, emptyArrayText: "Você ainda não pediu nada.", modalViewBorrow: false)
+                MyItemsSectionView(title: "Estou emprestando", itemArray: lentItems, trueConditionColor: .accent, falseConditionColor: .clear, emptyArrayText: "Você ainda não anunciou nada.", modalViewBorrow: false)
                 
                 
                 Spacer()
