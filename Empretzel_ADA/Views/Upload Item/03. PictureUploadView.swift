@@ -15,6 +15,10 @@ struct PictureUploadView: View {
     @Binding var displayUploadItemView: Bool
     @State var isNavigationActive = false
     
+    @Query(filter: #Predicate<User> { user in
+        user.isLoggedin == true
+    }) var loggedUser: [User]
+    
     var body: some View {
         NavigationStack {
             
@@ -40,7 +44,7 @@ struct PictureUploadView: View {
                 
                 Button {
                     addItem(item: item)
-                    item.lender = CurrentUserManager.currentUser
+                    item.lender = loggedUser.first
                     isNavigationActive = true
                 } label: {
                     Text("Publicar")

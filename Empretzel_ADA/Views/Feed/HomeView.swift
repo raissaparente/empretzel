@@ -57,9 +57,9 @@ struct HomeView: View {
             }
 
         }
-        .onAppear {
-            context.insert(CurrentUserManager.currentUser)
-        }
+//        .onAppear {
+//            context.insert(CurrentUserManager.currentUser)
+//        }
     }
 }
 

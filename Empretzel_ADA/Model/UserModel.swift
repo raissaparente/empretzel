@@ -16,15 +16,20 @@ class User {
     var password: String
     var email: String
     var cpf: Int
-    var phone: Int    
+    var phone: Int
+    var isLoggedin = false
     
-    init(name: String, password: String, email: String, cpf: Int, phone: Int) {
+    init(name: String, 
+         password: String,
+         email: String,
+         cpf: Int,
+         phone: Int) {
+        
         self.name = name
         self.password = password
         self.email = email
         self.cpf = cpf
         self.phone = phone
-//        self.id = id
     }
 }
 

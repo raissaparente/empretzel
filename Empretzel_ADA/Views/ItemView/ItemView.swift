@@ -13,6 +13,9 @@ struct ItemView: View {
     @Binding var displayRequestView: Bool
     @State var isNavigationActive = false
     
+    @Query(filter: #Predicate<User> { user in
+        user.isLoggedin == true
+    }) var loggedUser: [User]
     
     var body: some View {
         NavigationStack {
@@ -60,7 +63,7 @@ struct ItemView: View {
                     
                     Button {
                         isNavigationActive = true
-                        item.borrower = CurrentUserManager.currentUser
+                        item.borrowRequests.append(loggedUser.first!)
                     } label: {
                         Text("Quero")
                             .font(.title2)

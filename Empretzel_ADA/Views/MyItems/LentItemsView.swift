@@ -11,6 +11,7 @@ import SwiftUI
 
 struct LentItemsView: View {
     var item: Item
+    @State var userAccepted: User?
     
     var body: some View {
         NavigationStack {
@@ -22,29 +23,37 @@ struct LentItemsView: View {
                     
                     Spacer()
                     
-                    Text("Pessoas que querem esse item:")
-                    
-                    HStack {
-                        Button("Marcelle"){ }
-                            .buttonStyle(.borderedProminent)
-                        Button("Mariana"){ }
-                            .buttonStyle(.bordered)
-                            .tint(.accent)
-                        Button("Raissa"){ }
-                            .buttonStyle(.bordered)
-                            .tint(.accent)
+                    if item.borrowRequests.isEmpty {
+                        Text("O seu item ainda não tem pedidos.")
+                            .padding(.vertical, 25)
+
+                    } else {
+                        Text("Pessoas que querem esse item:")
+                        
+                        HStack {
+                            ForEach (item.borrowRequests){ user in
+                                Button(user.name){
+                                    userAccepted = user
+                                }
+                                .buttonStyle(.bordered)
+                            }
+                        }
+                        
+                        Spacer()
+                        
+                        Button {
+                            item.borrower = userAccepted
+                        } label : {
+                            Text("Confirmar empréstimo")
+                                .font(.title2)
+                                .frame(width: 280, height: 40)
+                        }
+                        .buttonStyle(.borderedProminent)
                     }
+                     
+
                     
-                    Spacer()
-                    
-                    Button {
-                        //action
-                    } label : {
-                        Text("Confirmar empréstimo")
-                            .font(.title2)
-                            .frame(width: 280, height: 40)
-                    }
-                    .buttonStyle(.borderedProminent)
+
                     
                 }
                 .padding()
