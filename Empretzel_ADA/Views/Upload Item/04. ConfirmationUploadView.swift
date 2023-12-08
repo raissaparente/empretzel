@@ -14,29 +14,52 @@ struct ConfirmationUploadView: View {
     
     var body: some View {
         
-        VStack {
-            Spacer()
-            
-            Text("Item Adicionado!")
-                .font(.largeTitle)
-                .onAppear {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                        displayUploadItemView = false
+        ZStack{
+            Color(uiColor: .systemGroupedBackground)
+              .edgesIgnoringSafeArea(.all)
+              .clipShape(RoundedRectangle(cornerRadius: 16))
+              .padding(16)
+              
+            VStack {
+                Spacer()
+                
+                Text("Item Adicionado!")
+                    .font(.largeTitle)
+                    .onAppear {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                            displayUploadItemView = false
+                        }
                     }
-                }
-            
-            
-            Image("logopurple")
-                .resizable()
-                .frame(width: 90, height: 90)
-            
-            Spacer()
-        }
-        .background(Color(uiColor: .systemGroupedBackground))
-        .toolbar {
-            Button("Fechar") {
-               dismiss()
+                
+                Image("logopurple")
+                    .resizable()
+                    .frame(width: 90, height: 90)
+                
+                Spacer()
             }
+           
+
+        
+         
+           
+            .toolbar {
+                Button("Fechar") {
+                    dismiss()
+                }
+            }
+            
+        }
+        
+
+    }
+       
+}
+
+
+struct ConfirmationUploadView_Previews: PreviewProvider {
+    static var previews: some View {
+        NavigationView {
+            ConfirmationUploadView(displayUploadItemView: .constant(true))
         }
     }
 }

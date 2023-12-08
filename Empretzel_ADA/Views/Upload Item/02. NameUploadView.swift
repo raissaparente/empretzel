@@ -56,14 +56,21 @@ struct NameUploadView: View {
                             Text("Bom estado").tag(2)
                             Text("Excelente").tag(3)
                         }
+                      
+                        
                     } header: {
                         Text("Estado do item")
                             .font(.system(size: 18))
                             .bold()
                             .foregroundStyle(.darkgray)
                             .textCase(nil)
+                            
                     }
                     .pickerStyle(.segmented)
+                   
+                   
+                 
+                   
                 }
                 
                 Spacer()
@@ -89,3 +96,5 @@ struct NameUploadView: View {
         }
     }
 }
+
+

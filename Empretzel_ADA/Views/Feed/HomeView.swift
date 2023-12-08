@@ -4,7 +4,6 @@
 //
 //  Created by Raissa Parente on 05/11/23.
 //
-
 import SwiftUI
 import SwiftData
 
@@ -43,19 +42,40 @@ struct HomeView: View {
             }
             .searchable(text: $searchText, prompt: "Qual item está procurando?")
             .overlay {
-                if items.isEmpty {
-                    ContentUnavailableView{
+                if !searchText.isEmpty {
+                    if items.isEmpty || !items.contains(where: { $0.name.lowercased().contains(searchText.lowercased()) }) {
+                       
+                        VStack {
+                            // Display a custom image when the searched item is not found
+                            Image(systemName: "exclamationmark.triangle")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 50, height: 50)
+                                .foregroundColor(.red)
+                            
+                            Text("Item não encontrado. Tente novamente.")
+                                .foregroundColor(.secondary)
+                            
+                        }
+                        
+                    }
+                } else if items.isEmpty {
+                    VStack {
+                        // Display a message when no items are searched
                         Label("Por enquanto não há itens.", systemImage: "square.stack.3d.up.slash.fill")
-                    } description: {
+                            .font(.title)
+                            .foregroundColor(.secondary)
+                        
                         Text("Tente adicionar um item ou procurar um amigo.")
-                    } 
+                            .foregroundColor(.secondary)
+                    }
                 }
             }
             //modal de publicar item
             .sheet(isPresented: $displayUploadItemView) {
                 CategoryUploadView(displayUploadItemView: $displayUploadItemView)
             }
-
+            
         }
 //        .onAppear {
 //            context.insert(CurrentUserManager.currentUser)
