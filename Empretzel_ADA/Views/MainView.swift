@@ -34,7 +34,7 @@ struct MainView: View {
                 }
                 .tag(Tab.feed)
             
-            ProfileView(user: TestUsers.marcelle)
+            ProfileView()
                 .tabItem {
                     Label("Perfil", systemImage: "person.fill")
                 }

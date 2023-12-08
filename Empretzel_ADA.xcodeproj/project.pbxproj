@@ -30,6 +30,7 @@
 		B68DCEB02AFD890000660B0F /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68DCEAF2AFD890000660B0F /* ItemView.swift */; };
 		B6A131792AF9542000F5B66E /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A131782AF9542000F5B66E /* CategoryModel.swift */; };
 		B6ADB7622B0E5DE300BFBA9A /* MyItemCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ADB7612B0E5DE300BFBA9A /* MyItemCardView.swift */; };
+		B6BE1D5D2B23A53B00B027B6 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BE1D5C2B23A53B00B027B6 /* LoginView.swift */; };
 		B6CE84B12B0284CC0061DB3F /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CE84B02B0284CC0061DB3F /* FeedView.swift */; };
 		B6CE84B32B02B6AF0061DB3F /* CategoryFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CE84B22B02B6AF0061DB3F /* CategoryFilterView.swift */; };
 		B6CE84B72B02B8FC0061DB3F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CE84B62B02B8FC0061DB3F /* MainView.swift */; };
@@ -62,6 +63,7 @@
 		B68DCEAF2AFD890000660B0F /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
 		B6A131782AF9542000F5B66E /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		B6ADB7612B0E5DE300BFBA9A /* MyItemCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyItemCardView.swift; sourceTree = "<group>"; };
+		B6BE1D5C2B23A53B00B027B6 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		B6CE84B02B0284CC0061DB3F /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		B6CE84B22B02B6AF0061DB3F /* CategoryFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryFilterView.swift; sourceTree = "<group>"; };
 		B6CE84B62B02B8FC0061DB3F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				B6CE84BA2B02B9D30061DB3F /* ProfileView.swift */,
+				B6BE1D5C2B23A53B00B027B6 /* LoginView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				B616FB842B06C4F800B31F97 /* 04. ConfirmationUploadView.swift in Sources */,
 				B662235B2AF82F12008AA337 /* HomeView.swift in Sources */,
 				B66223492AF82EDD008AA337 /* Empretzel_ADAApp.swift in Sources */,
+				B6BE1D5D2B23A53B00B027B6 /* LoginView.swift in Sources */,
 				B62D25AE2B07E3F7005E8165 /* ItemStateModel.swift in Sources */,
 				B68DCEB02AFD890000660B0F /* ItemView.swift in Sources */,
 				B616FB8D2B06C63900B31F97 /* MakeCapsuleTag.swift in Sources */,
