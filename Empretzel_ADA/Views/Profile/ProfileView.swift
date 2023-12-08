@@ -44,7 +44,7 @@ struct ProfileView: View {
                 
                 Section {
                     TextField("Digite seu celular", value: $user.phone, format: .number)
-               
+
                 } header: {
                     Text("Celular")
                         .font(.system(size: 18))
@@ -76,5 +76,6 @@ struct ProfileView: View {
             }
            
         }
+        .background(Color(uiColor: .systemGroupedBackground))
     }
 }

@@ -4,7 +4,6 @@
 //
 //  Created by Raissa Parente on 05/11/23.
 //
-
 import SwiftUI
 import SwiftData
 
@@ -72,8 +71,6 @@ struct HomeView: View {
                     }
                 }
             }
-            
-            
             //modal de publicar item
             .sheet(isPresented: $displayUploadItemView) {
                 CategoryUploadView(displayUploadItemView: $displayUploadItemView)
